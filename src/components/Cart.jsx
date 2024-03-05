@@ -4,7 +4,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { IoCart } from "react-icons/io5";
 import { useEffect, useState } from "react";
 
-function Cart({ carts, setCart, showSignUp, cartCount, setCartCount }) {
+function Cart({ carts, setCart, showSignUp }) {
     let [deleteMsg, setDeleteMsg] = useState(false)
 
     let removeProduct = (id) => {
@@ -24,6 +24,10 @@ function Cart({ carts, setCart, showSignUp, cartCount, setCartCount }) {
         setCart([])
     }
 
+
+    let handlePayment = (e) => {
+        e.preventDefault()
+    }
 
     return (
         <div>
@@ -47,7 +51,7 @@ function Cart({ carts, setCart, showSignUp, cartCount, setCartCount }) {
                             </div>
                             <h1 className="text-[17px] text-center md:text-[22px]">Your cart is empty!</h1>
                             <p className="text-[17px] text-center md:text-[22px]">Browse our category and discover our best deals!</p>
-                            <Link to={'/'}><button className={showSignUp ? 'bg-[#192123] rounded-sm my-4 w-full md:p-1 text-[#b4e900] text-[18px] md:text-[20px]' : 'animate-bounce bg-[#192123] rounded-sm my-4 w-full md:p-1 text-[#b4e900] text-[18px] md:text-[20px]'}>START SHOPPING</button> </Link>
+                            <Link to={'/Allproduct'}><button className={showSignUp ? 'bg-[#192123] rounded-sm my-4 w-full md:p-1 text-[#b4e900] text-[18px] md:text-[20px]' : 'animate-bounce bg-[#192123] rounded-sm my-4 w-full md:p-1 text-[#b4e900] text-[18px] md:text-[20px]'}>START SHOPPING</button> </Link>
 
                         </div>
                     </div>
@@ -59,21 +63,21 @@ function Cart({ carts, setCart, showSignUp, cartCount, setCartCount }) {
                                 <div className="bg-white md:p-8 p-4 w-full">
                                     <h1 className="md:text-xl md:font-medium font-normal">CHECKOUT</h1>
 
-                                    <form>
+                                    <form onSubmit={handlePayment}>
                                         <div className="my-[20px]">
                                             <h2 className="my-1 text-[#d36600] md:font-semibold font-medium">BILLING DETAILS</h2>
                                             <div className="grid gap-4 md:grid-cols-2">
                                                 <div>
                                                     <label>Name</label>
-                                                    <input className="border w-full rounded-sm p-[1px]  outline-none" type="text" />
+                                                    <input className="border border-gray-400 w-full rounded-sm p-[1px]  outline-none" type="text" />
                                                 </div>
                                                 <div>
                                                     <label>Email Address</label>
-                                                    <input className="border w-full rounded-sm outline-none" type="email" />
+                                                    <input className="border border-gray-400 w-full rounded-sm outline-none" type="email" />
                                                 </div>
                                                 <div>
                                                     <label>Phone Number</label>
-                                                    <input className="border w-full rounded-sm outline-none" type="number" />
+                                                    <input className="border border-gray-400 w-full rounded-sm outline-none" type="number" />
                                                 </div>
                                             </div>
                                         </div>
@@ -84,19 +88,44 @@ function Cart({ carts, setCart, showSignUp, cartCount, setCartCount }) {
                                             <div className="grid gap-4 md:grid-cols-2">
                                                 <div className="col-span-2">
                                                     <label>Address</label>
-                                                    <input className="border w-full rounded-sm p-[1px]  outline-none" type="text" />
+                                                    <input className="border border-gray-400 w-full rounded-sm p-[1px]  outline-none" type="text" />
                                                 </div>
                                                 <div>
                                                     <label>Zip Code</label>
-                                                    <input className="border w-full rounded-sm outline-none" type="number" />
+                                                    <input className="border border-gray-400 w-full rounded-sm outline-none" type="number" />
                                                 </div>
                                                 <div>
                                                     <label>City</label>
-                                                    <input className="border w-full rounded-sm outline-none" type="text" />
+                                                    <input className="border border-gray-400 w-full rounded-sm outline-none" type="text" />
                                                 </div>
                                                 <div>
                                                     <label>Country</label>
-                                                    <input className="border w-full rounded-sm outline-none" type="text" />
+                                                    <input className="border border-gray-400 w-full rounded-sm outline-none" type="text" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="my-[20px]">
+                                            <h2 className="my-1 text-[#d36600] md:font-semibold font-medium">PAYMENT DETAILS</h2>
+                                            <h3 className="py-1">payment method</h3>
+                                            <div className="flex justify-between items-center">
+                                                <button className="border border-orange-800 md:mb-0 mb-2 rounded-md  px-4 flex items-center justify-between  font-semibold text-gray-700 w-[40%] whitespace-nowrap md:text-[18px] text-[14px]"> e-Money
+                                                    <input className="form-radio  h-5 w-5 accent-orange-700" name="radio-buttons" type="radio" />
+                                                </button>
+
+                                                <button className="border border-orange-800 rounded-md  px-4 flex  items-center justify-between  font-semibold text-gray-700 w-[40%] whitespace-nowrap md:text-[18px] text-[14px]"> cash on delivery
+                                                    <input className="form-radio h-5 w-5 accent-orange-700" name="radio-buttons" type="radio" />
+                                                </button>
+                                            </div>
+
+                                            <div className="md:flex md:flex-row flex-col justify-between items-center mt-3">
+                                                <div>
+                                                    <label>e-money number</label>
+                                                    <input className="border border-gray-400 w-full rounded-sm outline-none" type="number" />
+                                                </div>
+                                                <div>
+                                                    <label>e-money-pin</label>
+                                                    <input className="border border-gray-400 w-full rounded-sm outline-none" type="text" />
                                                 </div>
                                             </div>
                                         </div>
@@ -104,26 +133,30 @@ function Cart({ carts, setCart, showSignUp, cartCount, setCartCount }) {
 
                                 </div>
                                 <div className="bg-white md:p-8 p-4">
-                                    <h1 className="md:text-xl md:font-medium font-normal">SUMMARY</h1>
+                                    <h1 className="md:text-xl md:font-medium  font-normal">SUMMARY</h1>
                                     {carts.map((cart) => {
-                                        let { id, image, name, price } = cart;
+                                        let { id, image, name, price, cartQuantity } = cart;
                                         return (
-                                            <div key={id} className="">
-                                                <div className='flex my-5 justify-between items-center'>
+                                            <div key={id} className="border-b-gray-500">
+                                                <div className='flex my-5 justify-between   items-center'>
                                                     <div className="flex gap-4">
                                                         <img className='p-2 rounded-md object-cover  bg-gray-200 md:w-[20%] w-20' src={image} alt={name} />
                                                         <div>
                                                             <h1 className="font-medium md:text-[14px] text-[11px]">{name}</h1>
-                                                            <h1 className="font-medium text-gray-500">{price}</h1>
+                                                            <h1 className="font-medium text-gray-500">$ {price}</h1>
                                                         </div>
                                                     </div>
-                                                    <button onClick={() => removeProduct(id)} className="md:text-[12px] text-[11px] rounded-sm cursor-pointer  hover:bg-[#b72522] hover:text-white ease-in-out duration-500 flex p-[3px] justify-center p-[px] font-semibold gap-1 text-[#b72522]">
-                                                        <RiDeleteBin6Line className='hover:bg-[#b72522]  hover:text-white' size={18} />REMOVE</button>
+                                                    <div>
+                                                        <p className="font-semibold text-gray-600">X{cartQuantity}</p>
+                                                        <button onClick={() => removeProduct(id)} className="md:text-[12px] text-[11px] rounded-sm cursor-pointer  hover:bg-[#b72522] hover:text-white ease-in-out duration-500 flex p-[3px] justify-center p-[px] font-semibold gap-1 text-[#b72522]">
+                                                            <RiDeleteBin6Line className='hover:bg-[#b72522]  hover:text-white' size={18} />REMOVE</button>
+                                                    </div>
                                                 </div>
+                                                <hr />
                                             </div>
                                         )
                                     })}
-                                    <div className="flex items-center justify-end mb-1">
+                                    <div className="flex items-center justify-end mt-2 mb-1">
                                         <button onClick={removeAllCart} className=" bg-[#b72522] w-32 text-white p-1 rounded-sm text-[11px] font-normal md:font-medium">Remove All</button>
                                     </div>
 

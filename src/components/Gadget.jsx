@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 import products from './Product'
 import { Link } from 'react-router-dom'
-import { IoIosArrowForward } from "react-icons/io";
 import { FaArrowLeft } from "react-icons/fa6";
+import { IoIosArrowForward } from "react-icons/io";
 
 function Gadget() {
     let [gadgets, setGadgets] = useState(products)
     let filteredGadget = gadgets.filter((gadget) => gadget.type === 'gadget')
-
     let [gadgetSearch, setGadgetSearch] = useState('')
     return (
         <div>
@@ -24,12 +23,14 @@ function Gadget() {
             <div className='mt-[200px] max-w-[1250px]  px-5 mx-auto'>
                 <h1 className=' md:font-bold font-semibold md:text-3xl animate-bounce text-[#192123] text-1xl'>Available Gadget</h1>
                 <div className='grid grid-cols-2 md:gap-20 gap-14 md:grid-cols-4 mt-[100px] '>
-                    {filteredGadget.map((items) => {
-                        let { id, name, image } = items
+                    {filteredGadget.filter((items) => {
+                        return gadgetSearch.toLowerCase() === '' ? items : items.name.toLocaleLowerCase().includes(gadgetSearch)
+                    }).map((items) => {
+                        let { id, name, image } = items         
                         return (
                             <div>
                                 <Link to={id}>
-                                    <div key={id} className='flex  flex-col items-center h-21 md:h-32 relative mb-10 justify-center shadow-sm hover:bg-gray-200 ease-in-out duration-500 bg-gray-100'>
+                                    <div key={id} className='flex  flex-col items-center h-21 md:h-32 relative mb-10 justify-center shadow-sm hover:shadow-lg ease-in-out duration-500 bg-[#f3f8ff]'>
                                         <div>
                                             <img className='w-[100px] md:w-[130px] absolute top-[-7%] left-[50%] translate-x-[-50%] translate-y-[-50%]' src={image} alt="" />
                                         </div>

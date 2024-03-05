@@ -27,7 +27,7 @@ function SignForm({ showSignUp, setShowSignUp }) {
                     <button className='w-full  md:p-2 p-1 flex items-center justify-center gap-6 border border-[#999] text-black rounded-md'>Sign Up with Google
                         <img className='w-5' src={googleLogo} alt="" />
                     </button>
-                    <p className='text-[#0c1012] md:text-[18px] text-[15px] py-3 flex items-center justify-center gap-4'>Already have an account? <button className='text-[#b4e900]'>Sign in</button></p>
+                    <p className='text-[#0c1012] md:text-[18px] text-[15px] py-3 flex items-center justify-center gap-4'>Already have an account? <button className=' text-[#0c1012] font-medium'>Sign in</button></p>
                 </form>
             </div>}
 

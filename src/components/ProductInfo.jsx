@@ -7,16 +7,30 @@ import { IoCart } from "react-icons/io5";
 // import { FaArrowLeftLong } from "react-icons/fa6";
 import { FaArrowLeft } from "react-icons/fa6";
 
-function ProductInfo({ carts, setCart, showSignUp }) {
+function ProductInfo({ carts, setCart, showSignUp, cartQuantity, setCartQuantity, showSuccessMsg, setShowSuccessMsg }) {
 
-    let [showSuccessMsg, setShowSuccessMsg] = useState(false)
 
     let addToCart = () => {
+        // setCartCount(prevCount => prevCount + 1)
         setShowSuccessMsg(!showSuccessMsg)
         setTimeout(() => {
             setShowSuccessMsg(showSuccessMsg)
         }, 3000)
-        setCart([...carts, { image: image, name: name, price: price, id: new Date().getTime().toString() }])
+
+        setCart([...carts, { image: image, name: name, price: price, cartQuantity: cartQuantity, id: new Date().getTime().toString() }])
+
+    }
+
+    let increaseQuantity = () => {
+        setCartQuantity(prev => prev + 1)
+    }
+
+    let decreaseQuantity = () => {
+        if (cartQuantity <= 1) {
+            setCartQuantity(cartQuantity(1))
+        } else {
+            setCartQuantity(prev => prev - 1)
+        }
     }
 
     let [myProduct, setMyProduct] = useState(products)
@@ -25,7 +39,7 @@ function ProductInfo({ carts, setCart, showSignUp }) {
     let productInfo = myProduct.find((product) => product.id === id)
     let { image, name, info, price, category } = productInfo
 
-    let sameCategory = myProduct.filter((prod) => prod.category == category)
+    let sameCategory = myProduct.filter((prod) => prod.category === category)
 
     return (
         <div className={showSignUp ? 'filter blur-[5px] brightness-[0.7]' : ''}>
@@ -44,7 +58,7 @@ function ProductInfo({ carts, setCart, showSignUp }) {
             <div className="max-w-[1250px] mx-auto px-5 mb-4 mt-[170px]">
                 {/* <Link to={'..'} relative="path" ><FaArrowLeft className='text-gray-600 inline' size={30} /></Link> */}
                 <div className="flex justify-between  md:flex-row  flex-col gap-10 items-center">
-                    <div className="flex items-center justify-center ">
+                    <div className="flex items-center justify-center bg-[#f3f8ff] p-2 rounded-md shadow-md">
                         <img className="w-[100%]   object-cover " src={image} alt="" />
                     </div>
 
@@ -54,10 +68,10 @@ function ProductInfo({ carts, setCart, showSignUp }) {
                         <p className="font-bold ">${price}</p>
 
                         <div className="flex gap-10 items-center mt-2 md:mt-6">
-                            <div className=" flex gap-6 items-center bg-gray-200 p-1">
-                                <FaPlus />
-                                <p>0</p>
-                                <FaMinus />
+                            <div className=" flex gap-6 items-center ">
+                                <button onClick={increaseQuantity} className="bg-[#192123] p-1 text-white"> <FaPlus /></button>
+                                <p className="font-semibold">{cartQuantity}</p>
+                                <button onClick={decreaseQuantity} className="bg-[#192123] p-1 text-white"> <FaMinus /></button>
                             </div>
                             <div className="flex-1">
                                 <button onClick={addToCart} className="md:w-[50%]  w-full flex items-center justify-center gap-8 rounded-sm bg-[#b4e900] p-2 text-[#192123] md:text-[15px] text-[12px] font-medium">ADD TO CART <IoCart /> </button>

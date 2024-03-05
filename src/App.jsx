@@ -8,28 +8,30 @@ import Cart from './components/Cart'
 // import Pratice from './pratice'
 import Footer from './components/Footer'
 import Gadget from './components/Gadget'
-
-
-// import AllProduct from './components/AllProduct'
-
+import Wears from './components/Wears'
+import AllProduct from './components/AllProduct'
+import WearsInfo from './components/WearsInfo'
 
 function App() {
-  let [search, setSearch] = useState('')
   let [carts, setCart] = useState([])
   let [cartCount, setCartCount] = useState(0)
+  let [cartQuantity, setCartQuantity] = useState(1)
   let [showSignUp, setShowSignUp] = useState(false);
+  let [showSuccessMsg, setShowSuccessMsg] = useState(false)
 
   return (
     <div className='relative'>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Navbar cartCount={cartCount} setCartCount={setCartCount} showSignUp={showSignUp} setShowSignUp={setShowSignUp} search={search} setSearch={setSearch} />} >
-            <Route index element={<Home showSignUp={showSignUp} setShowSignUp={setShowSignUp} search={search} setSearch={setSearch} />} />
-            {/* <Route path='AllProduct' element={<AllProduct />} /> */}
-            <Route path='/:id' element={<ProductInfo showSignUp={showSignUp} carts={carts} setCart={setCart} />} />
-            <Route path='cart' element={<Cart cartCount={cartCount} setCartCount={setCartCount} showSignUp={showSignUp} carts={carts} setCart={setCart} />} />
+          <Route path='/' element={<Navbar carts={carts} setCart={setCart} cartCount={cartCount} setCartCount={setCartCount} showSignUp={showSignUp} setShowSignUp={setShowSignUp} />} >
+            <Route index element={<Home showSignUp={showSignUp} setShowSignUp={setShowSignUp} />} />
+            <Route path='AllProduct' element={<AllProduct showSignUp={showSignUp} />} />
+            <Route path='AllProduct/:id' element={<ProductInfo cartQuantity={cartQuantity} setCartQuantity={setCartQuantity} showSignUp={showSignUp} carts={carts} setCart={setCart} cartCount={cartCount} setCartCount={setCartCount} showSuccessMsg={showSuccessMsg} setShowSuccessMsg={setShowSuccessMsg} />} />
+            <Route path='cart' element={<Cart cartQuantity={cartQuantity} setCartQuantity={setCartQuantity} cartCount={cartCount} setCartCount={setCartCount} showSignUp={showSignUp} carts={carts} setCart={setCart} />} />
             {/* <Route path='practice' element={<Pratice />} /> */}
             <Route path='gadget' element={<Gadget />} />
+            <Route path='wears' element={<Wears showSignUp={showSignUp} />} />
+            <Route path='wears/:id' element={<WearsInfo carts={carts} setCart={setCart} showSignUp={showSignUp} showSuccessMsg={showSuccessMsg} setShowSuccessMsg={setShowSuccessMsg} />} />
           </Route>
         </Routes>
 
