@@ -3,10 +3,12 @@ import { FaArrowLeft } from "react-icons/fa6";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { IoCart } from "react-icons/io5";
 import { useEffect, useState } from "react";
+import { FaPlus } from "react-icons/fa";
+import { FaMinus } from "react-icons/fa6"
 
-function Cart({ carts, setCart, showSignUp }) {
+function Cart({ carts, setCart, itemQuantity, setItemQuantity, showSignUp }) {
     let [deleteMsg, setDeleteMsg] = useState(false)
-
+    let [pay, setPay] = useState(false)
     let removeProduct = (id) => {
         setDeleteMsg(!deleteMsg)
         setTimeout(() => {
@@ -24,6 +26,13 @@ function Cart({ carts, setCart, showSignUp }) {
         setCart([])
     }
 
+    let decreaseQuantity = () => {
+        alert('yes')
+    }
+
+    let increaseQuantity = () => {
+        setItemQuantity(prev => prev + 1)
+    }
 
     let handlePayment = (e) => {
         e.preventDefault()
@@ -33,7 +42,7 @@ function Cart({ carts, setCart, showSignUp }) {
         <div>
             {deleteMsg && (
                 <div className="bg-red-400 top-0 ease-in-out duration-500 z-30 md:p-4 p-2 w-full text-white font-medium fixed">
-                    <p className="text-center md:text-[14px] text-[12px]">PRODUCT SUCCESSFULLY  DELETED</p>
+                    <p className="text-center md:text-[14px] text-[12px]">PRODUCT SUCCESSFULLY  REMOVED</p>
                 </div>
             )}
             <div className={showSignUp ? 'bg-gray-100 blur filter blur-[5px] brightness-[0.7]' : 'bg-gray-100'}>
@@ -60,12 +69,12 @@ function Cart({ carts, setCart, showSignUp }) {
                     <div className="mt-[160px] py-5 rel ">
                         <div className='max-w-[1250px] md:px-5 px-2 mx-auto'>
                             <div className="flex md:flex-row flex-col flex-col-reverse gap-4 justify-between">
-                                <div className="bg-white md:p-8 p-4 w-full">
+                                {pay && <div className="bg-white w-full md:p-8 p-4">
                                     <h1 className="md:text-xl md:font-medium font-normal">CHECKOUT</h1>
 
                                     <form onSubmit={handlePayment}>
                                         <div className="my-[20px]">
-                                            <h2 className="my-1 text-[#d36600] md:font-semibold font-medium">BILLING DETAILS</h2>
+                                            <h2 className="my-1 text-[#143f3c] md:font-semibold font-medium">BILLING DETAILS</h2>
                                             <div className="grid gap-4 md:grid-cols-2">
                                                 <div>
                                                     <label>Name</label>
@@ -84,7 +93,7 @@ function Cart({ carts, setCart, showSignUp }) {
 
 
                                         <div>
-                                            <h2 className="my-1 text-[#d36600] md:font-semibold font-medium">SHIPPING INFO</h2>
+                                            <h2 className="my-1 text-[#143f3c] md:font-semibold font-medium">SHIPPING INFO</h2>
                                             <div className="grid gap-4 md:grid-cols-2">
                                                 <div className="col-span-2">
                                                     <label>Address</label>
@@ -106,7 +115,7 @@ function Cart({ carts, setCart, showSignUp }) {
                                         </div>
 
                                         <div className="my-[20px]">
-                                            <h2 className="my-1 text-[#d36600] md:font-semibold font-medium">PAYMENT DETAILS</h2>
+                                            <h2 className="my-1 text-[#143f3c] md:font-semibold font-medium">PAYMENT DETAILS</h2>
                                             <h3 className="py-1">payment method</h3>
                                             <div className="flex justify-between items-center">
                                                 <button className="border border-orange-800 md:mb-0 mb-2 rounded-md  px-4 flex items-center justify-between  font-semibold text-gray-700 w-[40%] whitespace-nowrap md:text-[18px] text-[14px]"> e-Money
@@ -118,38 +127,45 @@ function Cart({ carts, setCart, showSignUp }) {
                                                 </button>
                                             </div>
 
-                                            <div className="md:flex md:flex-row flex-col justify-between items-center mt-3">
+                                            <div className="md:flex md:flex-row flex-col gap-4 items-center mt-3">
                                                 <div>
                                                     <label>e-money number</label>
                                                     <input className="border border-gray-400 w-full rounded-sm outline-none" type="number" />
                                                 </div>
                                                 <div>
                                                     <label>e-money-pin</label>
-                                                    <input className="border border-gray-400 w-full rounded-sm outline-none" type="text" />
+                                                    <input className="border border-gray-400 w-full rounded-sm outline-nonse" type="text" />
                                                 </div>
                                             </div>
                                         </div>
                                     </form>
+                                </div>}
 
-                                </div>
-                                <div className="bg-white md:p-8 p-4">
+                                <div className={pay ? "w-full mx-auto bg-white md:p-8 p-4" : "w-full md:w-[700px] mx-auto bg-white md:p-8 p-4"}>
                                     <h1 className="md:text-xl md:font-medium  font-normal">SUMMARY</h1>
                                     {carts.map((cart) => {
-                                        let { id, image, name, price, cartQuantity } = cart;
+                                        let { id, image, name, price, itemQuantity } = cart;
                                         return (
                                             <div key={id} className="border-b-gray-500">
                                                 <div className='flex my-5 justify-between   items-center'>
-                                                    <div className="flex gap-4">
-                                                        <img className='p-2 rounded-md object-cover  bg-gray-200 md:w-[20%] w-20' src={image} alt={name} />
-                                                        <div>
-                                                            <h1 className="font-medium md:text-[14px] text-[11px]">{name}</h1>
-                                                            <h1 className="font-medium text-gray-500">$ {price}</h1>
+                                                    <div>
+                                                        <div className="flex gap-4">
+                                                            <img className='p-2 rounded-md object-cover  bg-gray-200 md:w-[20%] w-20' src={image} alt={name} />
+                                                            <div>
+                                                                <h1 className="font-medium md:text-[14px] text-[11px]">{name}</h1>
+                                                                <h1 className="font-medium text-gray-500">$ {price}</h1>
+                                                                <div className="flex gap-6 items-center mt-2">
+                                                                    <button onClick={decreaseQuantity} className="bg-[#192123] py-[3px] px-[6px] text-[12px] rounded-sm text-white"><FaMinus /></button>
+                                                                    <button onClick={increaseQuantity} className="bg-[#192123] py-[3px] px-[6px] text-[12px] rounded-sm text-white"><FaPlus /></button>
+                                                                </div>
+                                                            </div>
                                                         </div>
+
                                                     </div>
                                                     <div>
-                                                        <p className="font-semibold text-gray-600">X{cartQuantity}</p>
-                                                        <button onClick={() => removeProduct(id)} className="md:text-[12px] text-[11px] rounded-sm cursor-pointer  hover:bg-[#b72522] hover:text-white ease-in-out duration-500 flex p-[3px] justify-center p-[px] font-semibold gap-1 text-[#b72522]">
-                                                            <RiDeleteBin6Line className='hover:bg-[#b72522]  hover:text-white' size={18} />REMOVE</button>
+                                                        <p className="font-semibold  text-gray-600">X{itemQuantity}</p>
+                                                        <button onClick={() => removeProduct(id)} className="md:text-[12px] text-[11px] rounded-sm cursor-pointer  hover:bg-red-100 hover:text-[#b72522] ease-in-out duration-500 flex p-[3px] justify-center p-[px] font-semibold gap-1 text-[#b72522]">
+                                                            <RiDeleteBin6Line className='' size={18} />REMOVE</button>
                                                     </div>
                                                 </div>
                                                 <hr />
@@ -157,10 +173,10 @@ function Cart({ carts, setCart, showSignUp }) {
                                         )
                                     })}
                                     <div className="flex items-center justify-end mt-2 mb-1">
-                                        <button onClick={removeAllCart} className=" bg-[#b72522] w-32 text-white p-1 rounded-sm text-[11px] font-normal md:font-medium">Remove All</button>
+                                        <button onClick={removeAllCart} className="ease-in-out duration-500  bg-[#b72522] hover:bg-red-400 w-32 text-white p-1 rounded-sm text-[11px] font-normal md:font-medium">Remove All</button>
                                     </div>
 
-                                    <button className="rounded-sm bg-[#d36600] text-white font-normal mt-2 md:font-medium w-full p-2 text-[13px]">CONTINUE & PAY</button>
+                                    {!pay && <button onClick={() => setPay(!pay)} className="rounded-sm bg-[#143f3c] text-white font-normal mt-2 md:font-medium w-full p-2 text-[13px]">CONTINUE & PAY</button>}
                                 </div>
                             </div>
                         </div>

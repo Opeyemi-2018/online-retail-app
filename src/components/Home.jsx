@@ -3,11 +3,11 @@ import headset2 from '../assets/images/head-set-2.png'
 import headphone from '../assets/images/headphone.png'
 import clothes from '../assets/images/clothes.png'
 import { IoIosArrowForward } from "react-icons/io";
-import Typed from 'react-typed';
+import { ReactTyped } from "react-typed";
 // import AllProduct from './components/AllProduct'
 import products from './Product'
 import { useState } from 'react';
-import smilyLady from '../assets/images/smily-Lady.png'
+import smilyLady from '../assets/images/smily-lady.png'
 
 function Home({ search, setSearch, showSignUp, setShowSignUp }) {
 
@@ -24,10 +24,11 @@ function Home({ search, setSearch, showSignUp, setShowSignUp }) {
                                 <h1 className='md:text-5xl pb-3 text-2xl  font-extrabold'>XX99 MARK II GADGET</h1>
                                 <div className='md:flex items-center py-3 hidden '>
                                     <p>Shop with us today  </p>
-                                    <Typed className='text-[#b4e900] ml-2 ' strings={['For Exclusive Deal', 'and Enjoy Quality Product']} typeSpeed={100} backSpeed={20} loop />
+
+                                    <ReactTyped className='text-[#b4e900] ml-2 ' strings={['For Exclusive Deal', 'and Enjoy Quality Product']} typeSpeed={100} backSpeed={20} loop />
                                 </div>
                                 <p className='pb-3 text-[#adbdbc]'>Discover the perfect blend of style and comfort with our latest collection</p>
-                                <div className='flex items-center justify-center'>
+                                <div className=''>
                                     <Link to={'/AllProduct'} className=' bg-[#192123]   font-bold md:flex items-center text-[#b4e900]  justify-between hidden md:text2xl text-1xl px-4 py-2 my-4 w-[40%] rounded-sm'>EXPLORE
                                         <IoIosArrowForward className='text-[#fff]'></IoIosArrowForward >
                                     </Link>
@@ -48,11 +49,12 @@ function Home({ search, setSearch, showSignUp, setShowSignUp }) {
                                 <img className=' w-[100%] top ' src={headset2} alt="" />
                                 <div className=' items-center justify-center flex mt-[-20px]'>
                                     <p className='text-[12px] whitespace-nowrap'>Shop with us today  </p>
-                                    <Typed className='text-[#b4e900] ml-2 whitespace-nowrap' strings={['For Exclusive Deal', 'and Enjoy Quality Product']} typeSpeed={100} backSpeed={50} loop />
+
+                                    <ReactTyped className='text-[#b4e900] ml-2 whitespace-nowrap' strings={['For Exclusive Deal', 'and Enjoy Quality Product']} typeSpeed={100} backSpeed={50} loop />
                                 </div>
                                 <div className='  flex items-center justify-center pb-4'>
-                                    <button className='bg-[#192123] text-[#b4e900] flex items-center justify-between   text-[14px] px-2 py-1 w-[40%] rounded-sm'>EXPLORE
-                                        <IoIosArrowForward className='text-[#b4e900]'></IoIosArrowForward ></button>
+                                    <Link to={'/AllProduct'} className='bg-[#192123] text-[#b4e900] flex items-center justify-between   text-[14px] px-2 py-1 w-[40%] rounded-sm'>EXPLORE
+                                        <IoIosArrowForward className='text-[#b4e900]'></IoIosArrowForward ></Link>
                                 </div>
                             </div>
                         </div>
@@ -69,7 +71,7 @@ function Home({ search, setSearch, showSignUp, setShowSignUp }) {
                             <div className='text-[#0c1012]'>
                                 <h1 className='text-[#0c1012] md:font-bold font-semibold md:text-3xl text-[15px]'>Get the latest outfit for the season</h1>
                                 <p className='md:py-4 '> shop our topnotch outfit and experience new wave</p>
-                                <Link to={'AllProduct'} className='md:w-full w-[70%] bg-[#0c1012] text-[#b4e900] md:mt-0 mt-2  md:text-1xl text-[12px] md:p-2 p-1 rounded-md animate-bounce'>CART PRODUCTS</Link>
+                                <Link to={'wears'} className='text-[#fff] block text-center bg-[#0c1012] w-full md:mt-0 mt-2  md:text-1xl text-[12px] md:p-2 p-1 rounded-md animate-bounce'>CHECK IT OUT</Link>
                             </div>
                         </div>
                     </div>

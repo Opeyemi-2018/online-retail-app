@@ -35,13 +35,13 @@ function Navbar({ showSignUp, setShowSignUp, cartCount, setCartCount, carts, set
                     {/* 'mr-10  hover:text-[#737e80] ease-in-out duration-500' */}
 
                     <div>
-                        <button onClick={() => setShowSignUp(!showSignUp)} className='flex items-center justify-center md:gap-1 bg-[#fff]  text-[#192123] font-medium py-[1px] px-1 rounded-sm md:text-[13px] sl:text-1xl hover:bg-[#b4e900] hover:text-[#192123] ease-in-out duration-500'>
+                        <button onClick={() => setShowSignUp(!showSignUp)} className='flex items-center justify-center md:gap-1 bg-[#fff]  text-[#192123] font-medium py-[1px] px-1 rounded-sm md:text-[13px] sl:text-1xl  hover:text-[#192123] ease-in-out duration-500'>
                             <MdAccountCircle className='text-[#192123]' size={21} /> <p className="md:flex hidden">Account</p> <IoIosArrowDown className={showSignUp ? 'flex  transition rotate-180' : 'flex  transition rotate'} size={21} /> </button>
                     </div>
 
                     <NavLink to={'/cart'}>
                         <div className='relative'>
-                            <p className='absolute md:left-4 left-3 md:bottom-4 bottom-2 text-[#0c1012] bg-[#b4e900]  rounded-full h-full w-full  flex items-center justify-center whitespace-wrap'>{carts.length}</p>
+                            <p className='absolute md:left-4 left-3 md:bottom-4 bottom-2 border border-white text-[#fff] bg-[#0c1012]  rounded-full h-full w-full  flex items-center justify-center whitespace-wrap'>{carts.length}</p>
                             <IoCart className='  hover:text-[#b4e900] md:text-[40px] text-[20px] ease-in-out duration-500' />
                         </div>
                     </NavLink>

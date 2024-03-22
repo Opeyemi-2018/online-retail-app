@@ -25,7 +25,7 @@ function Wears({ showSignUp }) {
             <section className={showSignUp ? 'filter blur-[5px] brightness-[0.7]' : ''}>
                 <div className='mt-[200px] max-w-[1250px]  px-5 mx-auto'>
                     <h1 className=' md:font-bold font-semibold md:text-3xl animate-bounce text-[#192123] text-1xl'>Available wears</h1>
-                    <div className='grid grid-cols-2 md:gap-20 gap-14 md:grid-cols-4 mt-[100px] '>
+                    <div className=' grid grid-cols-3 gap-10 md:grid-cols-6 md:gap-20 mt-[10px] '>
                         {filterWears.filter((items) => {
                             return wearsSearch.toLowerCase() === '' ? items : items.name.toLowerCase().includes(wearsSearch)
                         }).map((items) => {
@@ -33,13 +33,14 @@ function Wears({ showSignUp }) {
                             return (
                                 <div>
                                     <Link to={id}>
-                                        <div key={id} className='flex  flex-col items-center h-21 md:h-32 relative mb-10 justify-center shadow-sm hover:shadow-lg ease-in-out duration-500 bg-[#f3f8ff]'>
-                                            <div>
-                                                <img className='object-cover max-w-full max-h-full absolute top-[-7%] left-[50%] translate-x-[-50%] translate-y-[-50%]' src={image} alt="" />
+                                        <div key={id} className='flex flex-col  px-4 shadow-lg 
+                                           ease-in-out duration-500 border-gray-200 border border-r-1 border-l-0 border-b-0 border-t-0'>
+                                            <div className='flex items-center justify-center h-[80px] md:h-[100px]'>
+                                                <img className='max-w-[100%] max-h-[100%]' src={image} alt="" />
                                             </div>
 
-                                            <div className='mt-16 flex flex-col'>
-                                                <h1 className='text-[#000300] md:text-1xl text-[13px] font-semibold md:font-bolder'>{name}</h1>
+                                            <div className='md:mt-7 mt-4 flex flex-col items-center'>
+                                                <h1 className='text-[#000300] md:text-[17px] text-[13px] whitespace-nowrap font-semibold md:font-bolder'>{name}</h1>
                                                 <div className='flex items-center justify-center gap-4 mt-1'>
                                                     <p className='text-gray-700 text-sm'>SHOP</p>
                                                     <IoIosArrowForward className='text-[#b4e900]'></IoIosArrowForward >
