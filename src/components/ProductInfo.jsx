@@ -46,18 +46,18 @@ function ProductInfo({ carts, setCart, showSignUp, itemQuantity, setItemQuantity
     return (
         <div className={showSignUp ? 'filter blur-[5px] brightness-[0.7]' : ''}>
             {showSuccessMsg && (
-                <div className="bg-[#fff] top-0  animate-dropDown z-30 md:p-4 p-2 w-full text-[#0c1012] font-medium fixed">
-                    <p className="text-center md:text-[14px] text-[12px]">ITEM SUCCESSFULLY ADDED</p>
+                <div className="bg-[#fff] top-0  animate-dropDown z-30 md:p-8 p-4 w-full text-[#0c1012] font-medium fixed">
+                    <p className="text-center md:text-[17px] text-[15px]">ITEM SUCCESSFULLY ADDED</p>
                 </div>
             )}
 
-            <div className=" py-1 mt-[150px] fixed top-[-12%] bg-[#0c1012] z-30 w-full">
+            <div className=" py-2 mt-[150px] fixed top-[-12%] bg-[#0c1012] z-30 w-full">
                 <div className="max-w-[1250px] md:px-5 px-2 mx-auto">
                     <Link to={'..'} relative="path"><FaArrowLeft className='text-[#fff]  md:text-[25px] text-[20px] inline ' /></Link>
                 </div>
             </div>
 
-            <div className="max-w-[1250px] mx-auto px-5 mb-4 mt-[170px]">
+            <div className="max-w-[1250px] mx-auto px-5 mb-4 mt-[120px]">
                 {/* <Link to={'..'} relative="path" ><FaArrowLeft className='text-gray-600 inline' size={30} /></Link> */}
                 <div className="flex justify-between  md:flex-row  flex-col gap-10 items-center">
                     <div className="flex items-center justify-center bg-[#f3f8ff] p-2 rounded-md shadow-md">

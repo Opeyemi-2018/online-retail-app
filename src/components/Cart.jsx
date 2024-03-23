@@ -66,7 +66,7 @@ function Cart({ carts, setCart, itemQuantity, setItemQuantity, showSignUp }) {
                     </div>
                     :
 
-                    <div className="mt-[160px] py-5 rel ">
+                    <div className="md:mt-[110px] mt-[80px] py-5 rel ">
                         <div className='max-w-[1250px] md:px-5 px-2 mx-auto'>
                             <div className="flex md:flex-row flex-col flex-col-reverse gap-4 justify-between">
                                 {pay && <div className="bg-white w-full md:p-8 p-4">

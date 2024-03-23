@@ -13,9 +13,8 @@ import { MdAccountCircle } from "react-icons/md"
 import SignForm from './SignForm';
 // import HomeSearch from "./HomeSearch";
 
-function Navbar({ showSignUp, setShowSignUp, cartCount, setCartCount, carts, setCart, search, setSearch }) {
+function Navbar({ nav, setNav, showSignUp, setShowSignUp, cartCount, setCartCount, carts, setCart, search, setSearch }) {
 
-    let [nav, setNav] = useState(false)
     let handleNav = () => {
         setNav(!nav)
     }
@@ -26,10 +25,10 @@ function Navbar({ showSignUp, setShowSignUp, cartCount, setCartCount, carts, set
                 <div className="text-white   border-b border-[#b4e900] max-w-[1250px]  mt-4   h-16 md:px-5 px-2 mx-auto flex justify-between items-center">
                     <NavLink to={'/'} className="md:basis-1/4 basis-1/2 text-[#b4e900] animate-pulse inline md:text-3xl text-2xl font-extrabold">XX99</NavLink>
                     <nav className="hidden md:flex">
-                        <NavLink to={'/'} className={({ isActive }) => isActive ? 'activeStyle mr-10  hover:text-[#737e80] ease-in-out duration-500' : 'mr-10  hover:text-[#737e80] ease-in-out duration-500'}>HOME</NavLink>
-                        <NavLink to={'/AllProduct'} className={({ isActive }) => isActive ? 'activeStyle mr-10  hover:text-[#737e80] ease-in-out duration-500' : 'mr-10  hover:text-[#737e80] ease-in-out duration-500'}>PRODUCTS</NavLink>
-                        <NavLink to={'/wears'} className={({ isActive }) => isActive ? 'activeStyle mr-10  hover:text-[#737e80] ease-in-out duration-500' : 'mr-10  hover:text-[#737e80] ease-in-out duration-500'}>WEARS</NavLink>
-                        <NavLink to={'/gadget'} className={({ isActive }) => isActive ? 'activeStyle mr-10  hover:text-[#737e80] ease-in-out duration-500' : 'mr-10  hover:text-[#737e80] ease-in-out duration-500'}>GADGET</NavLink>
+                        <NavLink to={'/'} className={({ isActive }) => isActive ? 'activeStyle mr-10  hover:text-[#737e80] ease-in-out duration-500' : 'mr-10  hover:text-[#737e80] ease-in-out duration-500'}>Home</NavLink>
+                        <NavLink to={'/AllProduct'} className={({ isActive }) => isActive ? 'activeStyle mr-10  hover:text-[#737e80] ease-in-out duration-500' : 'mr-10  hover:text-[#737e80] ease-in-out duration-500'}>Product</NavLink>
+                        <NavLink to={'/wears'} className={({ isActive }) => isActive ? 'activeStyle mr-10  hover:text-[#737e80] ease-in-out duration-500' : 'mr-10  hover:text-[#737e80] ease-in-out duration-500'}>Wears</NavLink>
+                        <NavLink to={'/gadget'} className={({ isActive }) => isActive ? 'activeStyle mr-10  hover:text-[#737e80] ease-in-out duration-500' : 'mr-10  hover:text-[#737e80] ease-in-out duration-500'}>Gardet</NavLink>
                         <NavLink className='mr-10  hover:text-[#737e80] ease-in-out duration-500'>CONTACT</NavLink>
                     </nav>
                     {/* 'mr-10  hover:text-[#737e80] ease-in-out duration-500' */}
@@ -46,20 +45,21 @@ function Navbar({ showSignUp, setShowSignUp, cartCount, setCartCount, carts, set
                         </div>
                     </NavLink>
                     <div onClick={handleNav} className="block md:hidden  ">
-                        {nav ? <IoClose size={23} /> : <FaBars size={20} />}
+                        {nav ? <IoClose size={25} /> : <FaBars size={25} />}
                     </div>
 
                     <div className={nav ? "fixed z-50 md:hidden top-0 left-0 h-full w-[60%] border-r border-gray-900 bg-[#0c1012] ease-in-out duration-500" : 'fixed left-[-100%]'}>
                         <h1 className="w-[50%] text-[#b4e900] animate-pulse m-5 text-2xl font-extrabold">XX99</h1>
                         <nav className="">
-                            <NavLink to={'.'} className='block m-5 border-b border-gray-900'>HOME</NavLink>
-                            <NavLink className='block m-5 border-b border-gray-900'>WEARS</NavLink>
-                            <NavLink to={'/gadget'} className='block m-5 border-b border-gray-900'>GADGET</NavLink>
-                            <NavLink className='block m-5 border-b border-gray-900'>CONTACT</NavLink>
+                            <NavLink onClick={handleNav} to={'.'} className='block m-5 border-b border-gray-900'>Home</NavLink>
+                            <NavLink onClick={handleNav} to={'/AllProduct'} className='block m-5 border-b border-gray-900'>All Product</NavLink>
+                            <NavLink onClick={handleNav} to={'/wears'} className='block m-5 border-b border-gray-900'>Wears</NavLink>
+                            <NavLink onClick={handleNav} to={'/gadget'} className='block m-5 border-b border-gray-900'>Gadget</NavLink>
+                            <NavLink onClick={handleNav} className='block m-5 border-b border-gray-900'>Contact</NavLink>
                         </nav>
 
                         <div className="m-5">
-                            <NavLink to={'/cart'} className='w-40 bg-[#192123] text-[#b4e900] flex justify-between items-center font-medium py-[2px] px-2 rounded-sm text-sm'>Check Order <IoCart className='text-[#fff]'></IoCart > </NavLink>
+                            <NavLink onClick={handleNav} to={'/cart'} className='w-40 bg-[#192123] text-[#b4e900] flex justify-between items-center font-medium py-[2px] px-2 rounded-sm text-sm'>Check Order <IoCart className='text-[#fff]'></IoCart > </NavLink>
                         </div>
 
                     </div>

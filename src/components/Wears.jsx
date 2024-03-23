@@ -23,7 +23,7 @@ function Wears({ showSignUp }) {
             </div>
 
             <section className={showSignUp ? 'filter blur-[5px] brightness-[0.7]' : ''}>
-                <div className='mt-[200px] max-w-[1250px]  px-5 mx-auto'>
+                <div className='md:mt-[180px] mt-[170px] max-w-[1250px]  px-5 mx-auto'>
                     <h1 className=' md:font-bold font-semibold md:text-3xl animate-bounce text-[#192123] text-1xl'>Available wears</h1>
                     <div className=' grid grid-cols-3 gap-2 md:grid-cols-6  mt-[10px] '>
                         {filterWears.filter((items) => {

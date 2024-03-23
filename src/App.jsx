@@ -19,15 +19,16 @@ function App() {
   let [showSignUp, setShowSignUp] = useState(false);
   let [showSuccessMsg, setShowSuccessMsg] = useState(false)
 
+  let [nav, setNav] = useState(false)
 
 
   return (
     <div className='relative'>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Navbar carts={carts} setCart={setCart} cartCount={cartCount} setCartCount={setCartCount} showSignUp={showSignUp} setShowSignUp={setShowSignUp} />} >
+          <Route path='/' element={<Navbar nav={nav} setNav={setNav} carts={carts} setCart={setCart} cartCount={cartCount} setCartCount={setCartCount} showSignUp={showSignUp} setShowSignUp={setShowSignUp} />} >
             <Route index element={<Home showSignUp={showSignUp} setShowSignUp={setShowSignUp} />} />
-            <Route path='AllProduct' element={<AllProduct showSignUp={showSignUp} />} />
+            <Route path='AllProduct' element={<AllProduct showSignUp={showSignUp} nav={nav} setNav={setNav} />} />
             <Route path='AllProduct/:id' element={<ProductInfo itemQuantity={itemQuantity} setItemQuantity={setItemQuantity} showSignUp={showSignUp} carts={carts} setCart={setCart} cartCount={cartCount} setCartCount={setCartCount} showSuccessMsg={showSuccessMsg} setShowSuccessMsg={setShowSuccessMsg} />} />
             <Route path='cart' element={<Cart itemQuantity={itemQuantity} setItemQuantity={setItemQuantity} cartCount={cartCount} setCartCount={setCartCount} showSignUp={showSignUp} carts={carts} setCart={setCart} />} />
             {/* <Route path='practice' element={<Pratice />} /> */}
