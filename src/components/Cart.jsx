@@ -53,7 +53,7 @@ function Cart({ carts, setCart, itemQuantity, setItemQuantity, showSignUp }) {
                 </div>
 
                 {carts.length === 0 ?
-                    <div className="flex items-center  justify-center mt-[50px] p-2 h-screen">
+                    <div className="flex items-center  justify-center  p-2 h-screen">
                         <div>
                             <div className="bg-white rounded-full md:h-40 md:w-40 w-20 h-20  mx-auto flex items-center justify-center p-4 ">
                                 <IoCart className={showSignUp ? 'md:text-[80px] text-[50px]  text-[#192123] filter brightness-[7.0] blur-5 ' : 'md:text-[80px] text-[50px]  text-[#192123] animate-spin'} />

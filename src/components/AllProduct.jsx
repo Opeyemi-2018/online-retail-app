@@ -34,7 +34,7 @@ function AllProduct({ showSignUp }) {
                 </div>
             </div>
             <div className={showSignUp ? 'filter blur-[5px] brightness-[0.7] pointer-events-none' : ''}>
-                <div className='grid  grid-cols-3 gap-10 md:grid-cols-6  px-5  md:mt-[210px] mt-[180px] max-w-[1250px] mx-auto'>
+                <div className='grid  grid-cols-3 gap-2 md:grid-cols-6  px-5  md:mt-[210px] mt-[180px] max-w-[1250px] mx-auto'>
                     {filteredItems.filter((product) => {
                         return search.toLowerCase() === '' ? product : product.name.toLowerCase().includes(search)
                     }).map((product) => {
@@ -43,16 +43,16 @@ function AllProduct({ showSignUp }) {
                         return (
                             <div>
                                 <Link to={id}>
-                                    <div key={id} className='flex flex-col mb-2 px-4 shadow-lg 
+                                    <div key={id} className='flex flex-col mb-2 px-4 shadow-lg  
                                      ease-in-out duration-500 border-gray-200 border border-r-1 border-l-0 border-b-0 border-t-0'>
                                         <div className='flex items-center justify-center h-[80px] md:h-[100px]'>
                                             <img className='max-w-[100%] max-h-[100%]' src={image} alt="" />
                                         </div>
 
-                                        <div className='md:mt-7 mt-4 flex flex-col items-center'>
-                                            <h1 className='text-[#000300] md:text-[17px] text-[13px] font-semibold md:font-bolder'>{name}</h1>
+                                        <div className='md:mt-7 mt-1 flex flex-col items-center'>
+                                            <h1 className='text-[#000300] whitespace-nowrap md:text-[17px] text-[13px] font-semibold md:font-bolder'>{name}</h1>
                                             <div className='flex items-center justify-center gap-4 mt-1'>
-                                                <p className='text-gray-700 text-sm'>SHOP</p>
+                                                <p className='text-gray-700 md:text-sm text-[10px]'>SHOP</p>
                                                 <IoIosArrowForward className='text-[#b4e900]'></IoIosArrowForward >
                                             </div>
                                         </div>
