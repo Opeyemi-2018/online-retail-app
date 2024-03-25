@@ -4,7 +4,6 @@ import { useState } from "react"
 import { FaPlus } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa6"
 import { IoCart } from "react-icons/io5";
-import { PiWarningCircleLight } from "react-icons/pi"
 import { FaArrowLeft } from "react-icons/fa6";
 
 function ProductInfo({ carts, setCart, showSignUp, itemQuantity, setItemQuantity, showSuccessMsg, setShowSuccessMsg }) {
@@ -58,12 +57,7 @@ function ProductInfo({ carts, setCart, showSignUp, itemQuantity, setItemQuantity
                 </div>
             </div>
 
-            <div>
-                <div>
-                    <div>Are you sure you want to delete the item</div>
-                    <div></div>
-                </div>
-            </div>
+
 
             <div className="max-w-[1250px] mx-auto px-5 mb-4 mt-[120px]">
                 {/* <Link to={'..'} relative="path" ><FaArrowLeft className='text-gray-600 inline' size={30} /></Link> */}
@@ -72,7 +66,7 @@ function ProductInfo({ carts, setCart, showSignUp, itemQuantity, setItemQuantity
                         <img className="w-[100%]   object-cover " src={image} alt="" />
                     </div>
 
-                    <div className="">
+                    <div className="-mt-[10px]">
                         <h1 className="md:text-2xl text-1xl md:font-bold font-semibold">{name}</h1>
                         <p className="md:text-[17px] text-gray-600 md:py-4 py-1">{info}</p>
                         <p className="font-bold ">${price}</p>

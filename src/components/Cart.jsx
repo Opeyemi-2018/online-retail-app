@@ -67,7 +67,7 @@ function Cart({ carts, setCart, itemQuantity, setItemQuantity, showSignUp }) {
 
     return (
         <div>
-            {notification && (<div className="bg-gray-100 p-4 md:w-[40%] w-[55%] rounded-md fixed transform -translate-x-1/2 -translate-y-1/2 md:top-[50%] top-[40%] left-[50%]">
+            {notification && (<div className="bg-gray-100 p-4 md:w-[40%] w-[65%] rounded-md fixed transform -translate-x-1/2 -translate-y-1/2 md:top-[50%] top-[40%] left-[50%]">
                 <div className="flex items-center justify-center flex-col">
                     <div><PiWarningCircleLight size={30} /></div>
                     <div className="my-3 md:text-[20px] text-[16px]">Are you sure you want to remove all  items</div>
@@ -87,7 +87,7 @@ function Cart({ carts, setCart, itemQuantity, setItemQuantity, showSignUp }) {
                 </div>
             )}
             <div className={showSignUp ? 'bg-gray-100 blur filter blur-[5px] brightness-[0.7]' : 'bg-gray-100'}>
-                <div className="py-1 mt-[140px] fixed top-[-10%] bg-[#0c1012] z-20 w-full">
+                <div className="py-2 md:mt-[140px] mt-[145px] fixed top-[-10%] bg-[#0c1012] z-20 w-full">
                     <div className="max-w-[1250px] md:px-5 px-2 mx-auto">
                         <Link to='..' relative="path"><FaArrowLeft className='  text-[#fff] md:text-[25px] text-[20px] inline ' /></Link>
                     </div>
