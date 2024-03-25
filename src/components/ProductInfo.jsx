@@ -4,7 +4,7 @@ import { useState } from "react"
 import { FaPlus } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa6"
 import { IoCart } from "react-icons/io5";
-// import { FaArrowLeftLong } from "react-icons/fa6";
+import { PiWarningCircleLight } from "react-icons/pi"
 import { FaArrowLeft } from "react-icons/fa6";
 
 function ProductInfo({ carts, setCart, showSignUp, itemQuantity, setItemQuantity, showSuccessMsg, setShowSuccessMsg }) {
@@ -33,6 +33,7 @@ function ProductInfo({ carts, setCart, showSignUp, itemQuantity, setItemQuantity
         }
     }
 
+    // console.log(typeof itemQuantity);
 
 
     let [myProduct, setMyProduct] = useState(products)
@@ -46,7 +47,7 @@ function ProductInfo({ carts, setCart, showSignUp, itemQuantity, setItemQuantity
     return (
         <div className={showSignUp ? 'filter blur-[5px] brightness-[0.7]' : ''}>
             {showSuccessMsg && (
-                <div className="bg-[#fff] top-0  animate-dropDown z-30 md:p-8 p-4 w-full text-[#0c1012] font-medium fixed">
+                <div className="bg-[#fff] top-0  z-30 md:p-8 p-4 w-full text-[#0c1012] font-medium fixed ">
                     <p className="text-center md:text-[17px] text-[15px]">ITEM SUCCESSFULLY ADDED</p>
                 </div>
             )}
@@ -54,6 +55,13 @@ function ProductInfo({ carts, setCart, showSignUp, itemQuantity, setItemQuantity
             <div className=" py-2 mt-[150px] fixed top-[-12%] bg-[#0c1012] z-30 w-full">
                 <div className="max-w-[1250px] md:px-5 px-2 mx-auto">
                     <Link to={'..'} relative="path"><FaArrowLeft className='text-[#fff]  md:text-[25px] text-[20px] inline ' /></Link>
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <div>Are you sure you want to delete the item</div>
+                    <div></div>
                 </div>
             </div>
 

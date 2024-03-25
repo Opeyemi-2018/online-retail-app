@@ -21,9 +21,9 @@ function Footer() {
                     <div className="md:block flex items-center justify-center">
                         <nav className="text-[14px] text-[#adbdbc] md:text-[16px] ">
                             <Link to={'/.'} className='md:mx-7 mx-3' >HOME</Link>
-                            <Link className='md:mx-7 mx-3'>CONTACT</Link>
+                            <Link className='md:mx-7 mx-3'>PRODUCTS</Link>
                             <Link className='md:mx-7 mx-3'>ABOUT</Link>
-                            <Link to={'/AllProduct'} className='md:mx-7 mx-3'>PRODUCTS</Link>
+                            <Link to={'/AllProduct'} className='md:mx-7 mx-3'>CONTACT</Link>
                         </nav>
                     </div>
                 </div>

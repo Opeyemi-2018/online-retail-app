@@ -25,11 +25,11 @@ function Navbar({ nav, setNav, showSignUp, setShowSignUp, cartCount, setCartCoun
                 <div className="text-white   border-b border-[#b4e900] max-w-[1250px]  mt-4   h-16 md:px-5 px-2 mx-auto flex justify-between items-center">
                     <NavLink to={'/'} className="md:basis-1/4 basis-1/2 text-[#b4e900] animate-pulse inline md:text-3xl text-2xl font-extrabold">XX99</NavLink>
                     <nav className="hidden md:flex">
-                        <NavLink to={'/'} className={({ isActive }) => isActive ? 'activeStyle mr-10  hover:text-[#737e80] ease-in-out duration-500' : 'mr-10  hover:text-[#737e80] ease-in-out duration-500'}>Home</NavLink>
-                        <NavLink to={'/AllProduct'} className={({ isActive }) => isActive ? 'activeStyle mr-10  hover:text-[#737e80] ease-in-out duration-500' : 'mr-10  hover:text-[#737e80] ease-in-out duration-500'}>Product</NavLink>
-                        <NavLink to={'/wears'} className={({ isActive }) => isActive ? 'activeStyle mr-10  hover:text-[#737e80] ease-in-out duration-500' : 'mr-10  hover:text-[#737e80] ease-in-out duration-500'}>Wears</NavLink>
-                        <NavLink to={'/gadget'} className={({ isActive }) => isActive ? 'activeStyle mr-10  hover:text-[#737e80] ease-in-out duration-500' : 'mr-10  hover:text-[#737e80] ease-in-out duration-500'}>Gardet</NavLink>
-                        <NavLink className='mr-10  hover:text-[#737e80] ease-in-out duration-500'>CONTACT</NavLink>
+                        <NavLink to={'/'} className={({ isActive }) => isActive ? 'activeStyle mr-10  hover:text-[#737e80] ease-in-out duration-500' : 'mr-10  hover:text-[#737e80] ease-in-out duration-500'}>HOME</NavLink>
+                        <NavLink to={'/AllProduct'} className={({ isActive }) => isActive ? 'activeStyle mr-10  hover:text-[#737e80] ease-in-out duration-500' : 'mr-10  hover:text-[#737e80] ease-in-out duration-500'}>PRODUCTS</NavLink>
+                        <NavLink to={'/speaker'} className={({ isActive }) => isActive ? 'activeStyle mr-10  hover:text-[#737e80] ease-in-out duration-500' : 'mr-10  hover:text-[#737e80] ease-in-out duration-500'}>SPEAKER</NavLink>
+                        <NavLink to={'/gadget'} className={({ isActive }) => isActive ? 'activeStyle mr-10  hover:text-[#737e80] ease-in-out duration-500' : 'mr-10  hover:text-[#737e80] ease-in-out duration-500'}>HEADPHONE</NavLink>
+                        <NavLink className='mr-10  hover:text-[#737e80] ease-in-out duration-500'>CAMERA</NavLink>
                     </nav>
                     {/* 'mr-10  hover:text-[#737e80] ease-in-out duration-500' */}
 
@@ -51,11 +51,11 @@ function Navbar({ nav, setNav, showSignUp, setShowSignUp, cartCount, setCartCoun
                     <div className={nav ? "fixed z-50 md:hidden top-0 left-0 h-full w-[60%] border-r border-gray-900 bg-[#0c1012] ease-in-out duration-500" : 'fixed left-[-100%]'}>
                         <h1 className="w-[50%] text-[#b4e900] animate-pulse m-5 text-2xl font-extrabold">XX99</h1>
                         <nav className="">
-                            <NavLink onClick={handleNav} to={'.'} className='block m-5 border-b border-gray-900'>Home</NavLink>
-                            <NavLink onClick={handleNav} to={'/AllProduct'} className='block m-5 border-b border-gray-900'>All Product</NavLink>
-                            <NavLink onClick={handleNav} to={'/wears'} className='block m-5 border-b border-gray-900'>Wears</NavLink>
-                            <NavLink onClick={handleNav} to={'/gadget'} className='block m-5 border-b border-gray-900'>Gadget</NavLink>
-                            <NavLink onClick={handleNav} className='block m-5 border-b border-gray-900'>Contact</NavLink>
+                            <NavLink onClick={handleNav} to={'.'} className='block m-5 border-b border-gray-900'>HOME</NavLink>
+                            <NavLink onClick={handleNav} to={'/AllProduct'} className='block m-5 border-b border-gray-900'>PRODUCTS</NavLink>
+                            <NavLink onClick={handleNav} to={'/wears'} className='block m-5 border-b border-gray-900'>SPEAKER</NavLink>
+                            <NavLink onClick={handleNav} to={'/gadget'} className='block m-5 border-b border-gray-900'>HEADPHONE</NavLink>
+                            <NavLink onClick={handleNav} className='block m-5 border-b border-gray-900'>CAMERA</NavLink>
                         </nav>
 
                         <div className="m-5">

@@ -33,7 +33,7 @@ function AllProduct({ showSignUp }) {
                     <Link to='..' relative="path"><FaArrowLeft className='text-[#fff] md:text-[25px]  text-[20px] inline ' /></Link>
                 </div>
             </div>
-            <div className={showSignUp ? 'filter blur-[5px] brightness-[0.7] pointer-events-none' : ''}>
+            <div className={showSignUp ? 'flex items-center justify-centerfilter blur-[5px] brightness-[0.7] pointer-events-none' : ''}>
                 <div className='grid  grid-cols-3 gap-2 md:grid-cols-6  px-5  md:mt-[210px] mt-[170px] max-w-[1250px] mx-auto'>
                     {filteredItems.filter((product) => {
                         return search.toLowerCase() === '' ? product : product.name.toLowerCase().includes(search)

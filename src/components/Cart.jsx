@@ -6,11 +6,13 @@ import { useEffect, useState } from "react";
 import { FaPlus } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa6"
 
+import { PiWarningCircleLight } from "react-icons/pi"
+
 function Cart({ carts, setCart, itemQuantity, setItemQuantity, showSignUp }) {
     let [deleteMsg, setDeleteMsg] = useState(false)
+    let [notification, setNotification] = useState(false)
     let [pay, setPay] = useState(false)
-    let removeProduct = (id) => {
-        setDeleteMsg(!deleteMsg)
+    let showNotification = (id) => {
         setTimeout(() => {
             setDeleteMsg(deleteMsg)
         }, 3000)
@@ -18,7 +20,12 @@ function Cart({ carts, setCart, itemQuantity, setItemQuantity, showSignUp }) {
         setCart(selectedProduct)
     }
 
+    let handleNotification = () => {
+        setNotification(!notification)
+    }
+
     let removeAllCart = () => {
+        setNotification(!notification)
         setDeleteMsg(!deleteMsg)
         setTimeout(() => {
             setDeleteMsg(deleteMsg)
@@ -26,13 +33,33 @@ function Cart({ carts, setCart, itemQuantity, setItemQuantity, showSignUp }) {
         setCart([])
     }
 
-    let decreaseQuantity = () => {
-        alert('yes')
+    let cancel = () => {
+        setNotification(!notification)
     }
 
-    let increaseQuantity = () => {
-        setItemQuantity(prev => prev + 1)
+
+
+    let decreaseQuantity = () => {
+
     }
+
+    let increaseQuantity = (id) => {
+        // console.log(typeof itemQuantity);
+        // // Find the index of the item in the carts array
+        // const index = carts.findIndex(cart => cart.id === id);
+        // // Make a copy of the carts array to avoid mutating state directly
+        // const updatedCarts = [...carts];
+        // // Increase the quantity of the item at the found index
+        // updatedCarts[index].itemQuantity += 1;
+        // // Update the state with the updated carts array
+        // setCart(updatedCarts);
+        setItemQuan
+
+    }
+
+
+
+
 
     let handlePayment = (e) => {
         e.preventDefault()
@@ -40,6 +67,20 @@ function Cart({ carts, setCart, itemQuantity, setItemQuantity, showSignUp }) {
 
     return (
         <div>
+            {notification && (<div className="bg-gray-100 p-4 md:w-[40%] w-[55%] rounded-md fixed transform -translate-x-1/2 -translate-y-1/2 md:top-[50%] top-[40%] left-[50%]">
+                <div className="flex items-center justify-center flex-col">
+                    <div><PiWarningCircleLight size={30} /></div>
+                    <div className="my-3 md:text-[20px] text-[16px]">Are you sure you want to remove all  items</div>
+                    <div className="flex justify-between items-center gap-8 mt-2">
+                        <div>
+                            <button onClick={removeAllCart} className="bg-[#b72522] text-white hover:bg-red-500 py-1 md:px-2 px-2 rounded-md ease-in-out duration-500 ">Yes i'm sure</button>
+                        </div>
+                        <div>
+                            <button onClick={cancel} className="border border-[#0c1012] py-1 md:px-2 px-2 rounded-md ease-in-out duration-500 hover:bg-slate-200 ">No, cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>)}
             {deleteMsg && (
                 <div className="bg-red-400 top-0 ease-in-out duration-500 z-30 md:p-4 p-2 w-full text-white font-medium fixed">
                     <p className="text-center md:text-[14px] text-[12px]">PRODUCT SUCCESSFULLY  REMOVED</p>
@@ -65,7 +106,6 @@ function Cart({ carts, setCart, itemQuantity, setItemQuantity, showSignUp }) {
                         </div>
                     </div>
                     :
-
                     <div className="md:mt-[110px] mt-[80px] py-5 rel ">
                         <div className='max-w-[1250px] md:px-5 px-2 mx-auto'>
                             <div className="flex md:flex-row flex-col flex-col-reverse gap-4 justify-between">
@@ -164,7 +204,7 @@ function Cart({ carts, setCart, itemQuantity, setItemQuantity, showSignUp }) {
                                                     </div>
                                                     <div>
                                                         <p className="font-semibold  text-gray-600">X{itemQuantity}</p>
-                                                        <button onClick={() => removeProduct(id)} className="md:text-[12px] text-[11px] rounded-sm cursor-pointer  hover:bg-red-100 hover:text-[#b72522] ease-in-out duration-500 flex p-[3px] justify-center p-[px] font-semibold gap-1 text-[#b72522]">
+                                                        <button onClick={() => showNotification(id)} className="md:text-[12px] text-[11px] rounded-sm cursor-pointer  hover:bg-red-100 hover:text-[#b72522] ease-in-out duration-500 flex p-[3px] justify-center p-[px] font-semibold gap-1 text-[#b72522]">
                                                             <RiDeleteBin6Line className='' size={18} />REMOVE</button>
                                                     </div>
                                                 </div>
@@ -172,9 +212,13 @@ function Cart({ carts, setCart, itemQuantity, setItemQuantity, showSignUp }) {
                                             </div>
                                         )
                                     })}
-                                    <div className="flex items-center justify-end mt-2 mb-1">
-                                        <button onClick={removeAllCart} className="ease-in-out duration-500  bg-[#b72522] hover:bg-red-400 w-32 text-white p-1 rounded-sm text-[11px] font-normal md:font-medium">Remove All</button>
-                                    </div>
+                                    {carts.length > 1 ?
+                                        <div className="flex items-center justify-end mt-2 mb-1">
+                                            <button onClick={handleNotification} className="ease-in-out duration-500  bg-[#b72522] hover:bg-red-600 w-32 text-white p-1 rounded-sm text-[11px] font-normal md:font-medium">Remove All</button>
+                                        </div>
+                                        :
+                                        <div></div>
+                                    }
 
                                     {!pay && <button onClick={() => setPay(!pay)} className="rounded-sm bg-[#143f3c] text-white font-normal mt-2 md:font-medium w-full p-2 text-[13px]">CONTINUE & PAY</button>}
                                 </div>

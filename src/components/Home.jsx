@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom'
 import headset2 from '../assets/images/head-set-2.png'
 import headphone from '../assets/images/headphone.png'
-import clothes from '../assets/images/clothes.png'
+import speaker from '../assets/images/speaker-1.png'
 import { IoIosArrowForward } from "react-icons/io";
 import { ReactTyped } from "react-typed";
-// import AllProduct from './components/AllProduct'
+
 import products from './Product'
 import { useState } from 'react';
 import smilyLady from '../assets/images/smily-lady.png'
@@ -64,29 +64,29 @@ function Home({ search, setSearch, showSignUp, setShowSignUp }) {
                 </div >
                 <section>
                     <div className='bg-[#f3f8ff]'>
-                        <div className='pt-4 md:p-0 px-2 max-w-[900px] mx-auto  flex  justify-between items-center '>
+                        <div className='pt-4 md:py-2 py-1 px-2 max-w-[900px] mx-auto  flex  justify-between items-center '>
                             <div>
-                                <img className='md:w-full  object-cover' src={clothes} alt="" />
+                                <img className='md:w-full  object-cover' src={speaker} alt="" />
                             </div>
                             <div className='text-[#0c1012]'>
-                                <h1 className='text-[#0c1012] md:font-bold font-semibold md:text-3xl text-[15px]'>Get the latest outfit for the season</h1>
-                                <p className='md:py-4 '> shop our topnotch outfit and experience new wave</p>
-                                <Link to={'wears'} className='text-[#fff] block text-center bg-[#0c1012] w-full md:mt-0 mt-2  md:text-1xl text-[12px] md:p-2 p-1 rounded-md animate-bounce'>CHECK IT OUT</Link>
+                                <h1 className='text-[#0c1012] md:font-bold font-semibold md:text-3xl text-[15px]'>Upgrade to premium speaker today</h1>
+                                <p className='md:py-4 '> they are phenomenally built to deliver truly remarkable sound</p>
+                                <Link to={'wears'} style={{ letterSpacing: '5px' }} className='text-[#fff] block text-center bg-[#0c1012] w-full md:mt-0 mt-2  md:text-1xl text-[12px] md:p-2 p-1 rounded-md animate-bounce'>CHECK IT OUT</Link>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 <section>
-                    <div className='md:px-5'>
-                        <div className='bg-[#0c1012] md:rounded-md py-2 max-w-[1250px] my-4 mx-auto md:px-5 px-2'>
+                    <div className='md:px-5 py-2 bg-[#f3f8ff]'>
+                        <div className='bg-[#0c1012] md:rounded-md py-2 max-w-[1250px] mb-4 mx-auto md:px-5 px-2'>
                             <div className='flex md:flex-row flex-col justify-between items-center'>
                                 <div className='md:block flex items-center justify-center border border-[#b4e900]'>
                                     <img className='md:w-[70%] w-[full]' src={smilyLady} alt="" />
                                 </div>
                                 <div className='p-4'>
                                     <h1 className='text-[#b4e900] animate-pulse md:text-3xl text-1xl py-2 md:font-extrabold font-medium'>XX99</h1>
-                                    <p className='text-[#737e80] md:text-2xl text-[14px] py-2 md:font-extrabold font-medium'>Upgrade to premium product that are phenomenally built to deliver truly remarkable sound</p>
+                                    <p className='text-[#737e80] md:text-2xl text-[14px] py-2 md:font-extrabold font-medium'>shop our topnotch headset and experience new sound wave</p>
                                 </div>
                             </div>
                         </div>

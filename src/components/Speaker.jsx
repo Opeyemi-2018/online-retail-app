@@ -3,10 +3,10 @@ import { Link } from "react-router-dom"
 import products from "./Product"
 import { IoIosArrowForward } from "react-icons/io";
 import { FaArrowLeft } from "react-icons/fa6";
-function Wears({ showSignUp }) {
-    let [wears, setWears] = useState(products)
+function Speaker({ showSignUp }) {
+    let [speakers, setSpeaker] = useState(products)
     let [wearsSearch, setWearSearch] = useState('')
-    let filterWears = products.filter((wear) => wear.type === 'wear')
+    let filterSpeaker = speakers.filter((speaker) => speaker.category === 'speaker')
     return (
 
         <div>
@@ -24,9 +24,9 @@ function Wears({ showSignUp }) {
 
             <section className={showSignUp ? 'filter blur-[5px] brightness-[0.7]' : ''}>
                 <div className='md:mt-[180px] mt-[170px] max-w-[1250px]  px-5 mx-auto'>
-                    <h1 className=' md:font-bold font-semibold md:text-3xl animate-bounce text-[#192123] text-1xl'>Available wears</h1>
+                    <h1 className=' md:font-bold font-semibold md:text-3xl animate-bounce text-[#192123] text-1xl'>Available speakers</h1>
                     <div className=' grid grid-cols-3 gap-2 md:grid-cols-6  mt-[10px] '>
-                        {filterWears.filter((items) => {
+                        {filterSpeaker.filter((items) => {
                             return wearsSearch.toLowerCase() === '' ? items : items.name.toLowerCase().includes(wearsSearch)
                         }).map((items) => {
                             let { id, name, image } = items
@@ -57,7 +57,7 @@ function Wears({ showSignUp }) {
     )
 }
 
-export default Wears
+export default Speaker
 
 {/* <div key={id} className='rounded-md overflow-hidden shadow-sm hover:shadow-md bg-[#f3f8ff]'>
                                             <div className="w-full h-48 md:h-64 relative flex items-center justify-center">

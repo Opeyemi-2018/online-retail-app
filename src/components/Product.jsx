@@ -46,7 +46,7 @@ import jeans2 from '../assets/images/jeans.png'
 import jeans3 from '../assets/images/jeans2.png'
 
 let products = [
-    { id: '26', type: 'wear', category: 'cloth', image: shirt2, name: 'orange-shirt', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
+    // { id: '26', type: 'wear', category: 'cloth', image: shirt2, name: 'orange-shirt', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
     { id: '1', category: 'headphones', image: headset1, name: 'HEADPHONES', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
     { id: '2', type: 'gadget', category: 'speaker', image: speaker1, name: 'SPEAKER', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
     { id: '3', type: 'gadget', category: 'camcoder', image: camcoder1, name: 'CAMCODER', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
@@ -77,23 +77,23 @@ let products = [
     { id: '24', type: 'gadget', category: 'camcoder', image: camcoder3, name: 'camcoder', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
     { id: '25', type: 'gadget', category: 'camcoder', image: camcoder4, name: 'camcoder', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
 
-    { id: '27', type: 'wear', category: 'cloth', image: shirt1, name: 'white-shirt', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
-    { id: '28', type: 'wear', category: 'cloth', image: shirt3, name: 'long-hand-shirt', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
-    { id: '29', type: 'wear', category: 'cloth', image: shirt4, name: 'black-shirt', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
+    // { id: '27', type: 'wear', category: 'cloth', image: shirt1, name: 'white-shirt', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
+    // { id: '28', type: 'wear', category: 'cloth', image: shirt3, name: 'long-hand-shirt', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
+    // { id: '29', type: 'wear', category: 'cloth', image: shirt4, name: 'black-shirt', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
 
-    { id: '30', type: 'wear', category: 'shoe', image: shoe3, name: 'shoe', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
-    { id: '31', type: 'wear', category: 'shoe', image: shoe1, name: 'soccer boot', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
-    { id: '32', type: 'wear', category: 'shoe', image: shoe2, name: 'soccer boot', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
-    { id: '33', type: 'wear', category: 'shoe', image: shoe4, name: 'shoe', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
+    // { id: '30', type: 'wear', category: 'shoe', image: shoe3, name: 'shoe', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
+    // { id: '31', type: 'wear', category: 'shoe', image: shoe1, name: 'soccer boot', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
+    // { id: '32', type: 'wear', category: 'shoe', image: shoe2, name: 'soccer boot', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
+    // { id: '33', type: 'wear', category: 'shoe', image: shoe4, name: 'shoe', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
 
-    { id: '33', type: 'wear', category: 'sandal', image: sandal, name: 'sandal', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
-    { id: '33', type: 'wear', category: 'sandal', image: sandal2, name: 'sandal', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
-    { id: '33', type: 'wear', category: 'sandal', image: pam, name: 'pam', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
+    // { id: '34', type: 'wear', category: 'sandal', image: sandal, name: 'sandal', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
+    // { id: '35', type: 'wear', category: 'sandal', image: sandal2, name: 'sandal', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
+    // { id: '36', type: 'wear', category: 'sandal', image: pam, name: 'pam', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
 
 
-    { id: '34', type: 'wear', category: 'jeans', image: jeans2, name: 'jeans', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
-    { id: '35', type: 'wear', category: 'jeans', image: jeans3, name: 'jeans', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
-    { id: '36', type: 'wear', category: 'jeans', image: jeans1, name: 'tattered jeans', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
+    // { id: '37', type: 'wear', category: 'jeans', image: jeans2, name: 'jeans', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
+    // { id: '38', type: 'wear', category: 'jeans', image: jeans3, name: 'jeans', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
+    // { id: '39', type: 'wear', category: 'jeans', image: jeans1, name: 'tattered jeans', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
 ]
 
 export default products
