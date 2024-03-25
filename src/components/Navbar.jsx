@@ -53,7 +53,7 @@ function Navbar({ nav, setNav, showSignUp, setShowSignUp, cartCount, setCartCoun
                         <nav className="">
                             <NavLink onClick={handleNav} to={'.'} className='block m-5 border-b border-gray-900'>HOME</NavLink>
                             <NavLink onClick={handleNav} to={'/AllProduct'} className='block m-5 border-b border-gray-900'>PRODUCTS</NavLink>
-                            <NavLink onClick={handleNav} to={'/wears'} className='block m-5 border-b border-gray-900'>SPEAKER</NavLink>
+                            <NavLink onClick={handleNav} to={'/speaker'} className='block m-5 border-b border-gray-900'>SPEAKER</NavLink>
                             <NavLink onClick={handleNav} to={'/gadget'} className='block m-5 border-b border-gray-900'>HEADPHONE</NavLink>
                             <NavLink onClick={handleNav} className='block m-5 border-b border-gray-900'>CAMERA</NavLink>
                         </nav>
