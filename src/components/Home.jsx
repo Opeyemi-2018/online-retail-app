@@ -66,19 +66,19 @@ function Home({ search, setSearch, showSignUp, setShowSignUp }) {
                     <div className='bg-[#f3f8ff]'>
                         <div className='pt-4 md:py-2 py-1 px-2 max-w-[900px] mx-auto  flex  justify-between items-center '>
                             <div>
-                                <img className='md:w-full  object-cover' src={speaker} alt="" />
+                                <img className='md:w-full w-[85%] object-cover' src={speaker} alt="" />
                             </div>
                             <div className='text-[#0c1012]'>
                                 <h1 className='text-[#0c1012] md:font-bold font-semibold md:text-3xl text-[15px]'>Upgrade to premium speaker today</h1>
                                 <p className='md:py-4 '> they are phenomenally built to deliver truly remarkable sound</p>
-                                <Link to={'wears'} style={{ letterSpacing: '5px' }} className='text-[#fff] block text-center bg-[#0c1012] w-full md:mt-0 mt-2  md:text-1xl text-[12px] md:p-2 p-1 rounded-md animate-bounce'>CHECK IT OUT</Link>
+                                <Link to={'/Speaker'} style={{ letterSpacing: '5px' }} className='text-[#fff] block text-center bg-[#0c1012] w-full md:mt-0 mt-2  md:text-1xl text-[12px] md:p-2 p-1 rounded-md animate-bounce'>CHECK IT OUT</Link>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 <section>
-                    <div className='md:px-5 py-2 bg-[#f3f8ff]'>
+                    <div className='md:px-5 py-2  bg-[#f3f8ff]'>
                         <div className='bg-[#0c1012] md:rounded-md py-2 max-w-[1250px] mb-4 mx-auto md:px-5 px-2'>
                             <div className='flex md:flex-row flex-col justify-between items-center'>
                                 <div className='md:block flex items-center justify-center border border-[#b4e900]'>

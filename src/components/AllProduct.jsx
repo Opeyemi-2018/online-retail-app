@@ -25,7 +25,7 @@ function AllProduct({ showSignUp }) {
         <section>
             <div className='mt-[83px] p-2 fixed top-0 z-20 w-full bg-[#0c1012]'>
                 <div className='max-w-[2000px] md:px-5 px-2 md:max-w-[1250px] mx-auto flex items-center justify-center'>
-                    <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder='search for product' className="w-full  outline-none bg-[#fff] rounded-md py-1 px-3" type="text" />
+                    <input value={search} onChange={(e) => setSearch(e.target.value.toLowerCase())} placeholder='search for product' className="w-full  outline-none bg-[#fff] rounded-md py-1 px-3" type="text" />
                 </div>
             </div>
             <div className="-10 py-1 mt-[140px] fixed top-[-2%] bg-[#0c1012] z-20 w-full">
@@ -33,10 +33,10 @@ function AllProduct({ showSignUp }) {
                     <Link to='..' relative="path"><FaArrowLeft className='text-[#fff] md:text-[25px]  text-[20px] inline ' /></Link>
                 </div>
             </div>
-            <div className={showSignUp ? 'flex items-center justify-centerfilter blur-[5px] brightness-[0.7] pointer-events-none' : ''}>
+            <div className={showSignUp ? 'filter blur-[5px] brightness-[0.7] pointer-events-none' : ''}>
                 <div className='grid  grid-cols-3 gap-2 md:grid-cols-6  px-5  md:mt-[210px] mt-[170px] max-w-[1250px] mx-auto'>
                     {filteredItems.filter((product) => {
-                        return search.toLowerCase() === '' ? product : product.name.toLowerCase().includes(search)
+                        return search.trim().toLowerCase() === '' ? product : product.name.toLowerCase().includes(search)
                     }).map((product) => {
                         let { id, image, name } = product
 

@@ -47,14 +47,14 @@ import jeans3 from '../assets/images/jeans2.png'
 
 let products = [
     // { id: '26', type: 'wear', category: 'cloth', image: shirt2, name: 'orange-shirt', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
-    { id: '1', category: 'headphones', image: headset1, name: 'HEADPHONES', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
-    { id: '2', type: 'gadget', category: 'speaker', image: speaker1, name: 'SPEAKER', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
-    { id: '3', type: 'gadget', category: 'camcoder', image: camcoder1, name: 'CAMCODER', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
-    { id: '4', type: 'gadget', category: 'series', image: series1, name: 'SERIES', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
-    { id: '5', type: 'gadget', category: 'series', image: series2, name: 'SERIES', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
-    { id: '6', type: 'gadget', category: 'camcoder', image: camcoder2, name: 'CAMCODER', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
+    { id: '1', category: 'headphones', image: headset1, name: 'headphones', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
+    { id: '2', type: 'gadget', category: 'speaker', image: speaker1, name: 'speaker', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
+    { id: '3', type: 'gadget', category: 'camcoder', image: camcoder1, name: 'camcoder', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
+    { id: '4', type: 'gadget', category: 'series', image: series1, name: 'series', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
+    { id: '5', type: 'gadget', category: 'series', image: series2, name: 'series', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
+    { id: '6', type: 'gadget', category: 'camcoder', image: camcoder2, name: 'camcoder', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
 
-    { id: '7', type: 'gadget', category: 'speaker', image: speaker2, name: 'SPEAKER', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
+    { id: '7', type: 'gadget', category: 'speaker', image: speaker2, name: 'speaker', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
     { id: '8', type: 'gadget', category: 'speaker', image: speaker3, name: 'speaker', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
     { id: '9', type: 'gadget', category: 'speaker', image: speaker4, name: 'speaker', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
     { id: '10', type: 'gadget', category: 'speaker', image: speaker5, name: 'speaker', info: 'sit amet consectetur adipisicing elit. Officia fuga rem asperiores ab repellat autem sit a itaque veritatis deleniti.', price: 200 },
