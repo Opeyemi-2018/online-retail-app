@@ -8,7 +8,7 @@ import { FaMinus } from "react-icons/fa6"
 
 import { PiWarningCircleLight } from "react-icons/pi"
 
-function Cart({ carts, setCart, itemQuantity, setItemQuantity, showSignUp }) {
+function Cart({ carts, setCart, showSignUp }) {
     let [deleteMsg, setDeleteMsg] = useState(false)
     let [notification, setNotification] = useState(false)
     let [pay, setPay] = useState(false)
@@ -24,6 +24,7 @@ function Cart({ carts, setCart, itemQuantity, setItemQuantity, showSignUp }) {
         setNotification(!notification)
     }
 
+
     let removeAllCart = () => {
         setNotification(!notification)
         setDeleteMsg(!deleteMsg)
@@ -37,27 +38,28 @@ function Cart({ carts, setCart, itemQuantity, setItemQuantity, showSignUp }) {
         setNotification(!notification)
     }
 
+    const increaseQuantity = (id) => { // Function to increase the quantity of a cart item
+        const updatedCart = carts.map((cartItem) => { // Map through the current items in the cart
+            if (cartItem.id === id) { // Check if the current item matches the provided id
+                // Increase quantity by 1
+                return { ...cartItem, itemQuantity: cartItem.itemQuantity + 1 }; // Update quantity and return the updated item
+            }
+            return cartItem; // Return the item unchanged if the id doesn't match
+        });
+        setCart(updatedCart); // Update the cart state with the updated items
+    };
 
-
-    let decreaseQuantity = () => {
-
-    }
-
-    let increaseQuantity = (id) => {
-        // console.log(typeof itemQuantity);
-        // // Find the index of the item in the carts array
-        // const index = carts.findIndex(cart => cart.id === id);
-        // // Make a copy of the carts array to avoid mutating state directly
-        // const updatedCarts = [...carts];
-        // // Increase the quantity of the item at the found index
-        // updatedCarts[index].itemQuantity += 1;
-        // // Update the state with the updated carts array
-        // setCart(updatedCarts);
-        setItemQuan
-
-    }
-
-
+    // Function to decrease the quantity of a cart item
+    const decreaseQuantity = (id) => { // Function to decrease the quantity of a cart item
+        const updatedCart = carts.map((cartItem) => { // Map through the current items in the cart
+            if (cartItem.id === id && cartItem.itemQuantity > 1) { // Check if the item matches the id and its quantity is greater than 1
+                // Decrease quantity by 1, but ensure it doesn't go below 1
+                return { ...cartItem, itemQuantity: cartItem.itemQuantity - 1 }; // Update quantity and return the updated item
+            }
+            return cartItem; // Return the item unchanged if the id doesn't match or quantity is already 1
+        });
+        setCart(updatedCart); // Update the cart state with the updated items
+    };
 
 
 
@@ -67,29 +69,29 @@ function Cart({ carts, setCart, itemQuantity, setItemQuantity, showSignUp }) {
 
     return (
         <div>
-            {notification && (<div className="bg-gray-100 p-4 md:w-[40%] w-[65%] rounded-md fixed transform -translate-x-1/2 -translate-y-1/2 md:top-[50%] top-[40%] left-[50%]">
+            {notification && (<div className="bg-gray-300 p-4 md:w-[40%] w-[80%] rounded-md fixed transform -translate-x-1/2 -translate-y-1/2 md:top-[50%] top-[40%] left-[50%]">
                 <div className="flex items-center justify-center flex-col">
                     <div><PiWarningCircleLight size={30} /></div>
-                    <div className="my-3 md:text-[20px] text-[16px]">Are you sure you want to remove all  items</div>
+                    <div className="my-3 md:text-[20px] text-[15px]">Are you sure you want to remove all  items</div>
                     <div className="flex justify-between items-center gap-8 mt-2">
                         <div>
                             <button onClick={removeAllCart} className="bg-[#b72522] text-white hover:bg-red-500 py-1 md:px-2 px-2 rounded-md ease-in-out duration-500 ">Yes i'm sure</button>
                         </div>
                         <div>
-                            <button onClick={cancel} className="border border-[#0c1012] py-1 md:px-2 px-2 rounded-md ease-in-out duration-500 hover:bg-slate-200 ">No, cancel</button>
+                            <button onClick={cancel} className="border border-[#0c1012] bg-white md:py-1 py-[3px] md:px-2 px-2 rounded-md ease-in-out duration-500 hover:bg-slate-200 ">No, cancel</button>
                         </div>
                     </div>
                 </div>
             </div>)}
             {deleteMsg && (
                 <div className="bg-red-400 top-0 ease-in-out duration-500 z-30 md:p-4 p-2 w-full text-white font-medium fixed">
-                    <p className="text-center md:text-[14px] text-[12px]">PRODUCT SUCCESSFULLY  REMOVED</p>
+                    <p className="text-center md:text-[14px] text-[12px]">ALL PRODUCT SUCCESSFULLY  REMOVED</p>
                 </div>
             )}
             <div className={showSignUp ? 'bg-gray-100 blur filter blur-[5px] brightness-[0.7]' : 'bg-gray-100'}>
                 <div className="py-2 md:mt-[140px] mt-[145px] fixed top-[-10%] bg-[#0c1012] z-20 w-full">
                     <div className="max-w-[1250px] md:px-5 px-2 mx-auto">
-                        <Link to='..' relative="path"><FaArrowLeft className='  text-[#fff] md:text-[25px] text-[20px] inline ' /></Link>
+                        <Link to='..' relative="path"><FaArrowLeft className='text-[#fff] md:text-[25px] text-[20px] inline ' /></Link>
                     </div>
                 </div>
 
@@ -181,13 +183,13 @@ function Cart({ carts, setCart, itemQuantity, setItemQuantity, showSignUp }) {
                                     </form>
                                 </div>}
 
-                                <div className={pay ? "w-full mx-auto bg-white md:p-8 p-4" : "w-full md:w-[700px] mx-auto bg-white md:p-8 p-4"}>
+                                <div className={pay ? "w-full mx-auto " : "w-full md:w-[700px] mx-auto"}>
                                     <h1 className="md:text-xl md:font-medium  font-normal">SUMMARY</h1>
                                     {carts.map((cart) => {
                                         let { id, image, name, price, itemQuantity } = cart;
                                         return (
-                                            <div key={id} className="border-b-gray-500">
-                                                <div className='flex my-5 justify-between   items-center'>
+                                            <div key={id} className="bg-white px-2 py-1 rounded-md mb-2">
+                                                <div className='flex my-5 justify-between items-center'>
                                                     <div>
                                                         <div className="flex gap-4">
                                                             <img className='p-2 rounded-md object-cover  bg-gray-200 md:w-[20%] w-20' src={image} alt={name} />
@@ -195,8 +197,8 @@ function Cart({ carts, setCart, itemQuantity, setItemQuantity, showSignUp }) {
                                                                 <h1 className="font-medium md:text-[14px] text-[11px]">{name}</h1>
                                                                 <h1 className="font-medium text-gray-500">$ {price}</h1>
                                                                 <div className="flex gap-6 items-center mt-2">
-                                                                    <button onClick={decreaseQuantity} className="bg-[#192123] py-[3px] px-[6px] text-[12px] rounded-sm text-white"><FaMinus /></button>
-                                                                    <button onClick={increaseQuantity} className="bg-[#192123] py-[3px] px-[6px] text-[12px] rounded-sm text-white"><FaPlus /></button>
+                                                                    <button onClick={() => decreaseQuantity(cart.id)} className="bg-gray-200 py-[3px] px-[6px] text-[12px] rounded-sm text-[#192123]"><FaMinus /></button>
+                                                                    <button onClick={() => increaseQuantity(cart.id)} className="bg-gray-200 py-[3px] px-[6px] text-[12px] rounded-sm text-[#192123]"><FaPlus /></button>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -220,7 +222,7 @@ function Cart({ carts, setCart, itemQuantity, setItemQuantity, showSignUp }) {
                                         <div></div>
                                     }
 
-                                    {!pay && <button onClick={() => setPay(!pay)} className="rounded-sm bg-[#143f3c] text-white font-normal mt-2 md:font-medium w-full p-2 text-[13px]">CONTINUE & PAY</button>}
+                                    {!pay && <button onClick={() => setPay(!pay)} className="rounded-sm bg-[#192123] text-white font-normal mt-2 md:font-medium w-full p-2 text-[13px]">CONTINUE & PAY</button>}
                                 </div>
                             </div>
                         </div>

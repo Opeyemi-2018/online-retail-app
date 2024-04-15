@@ -5,14 +5,23 @@ import { FaPlus } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa6"
 import { IoCart } from "react-icons/io5";
 
-function Speakerinfo({ carts, setCart, showSignUp, cartQuantity, setCartQuantity, showSuccessMsg, setShowSuccessMsg }) {
+function Speakerinfo({ carts, setCart, showSignUp, speakerQuantity, setSpeakerQuantity, showSuccessMsg, setShowSuccessMsg }) {
 
     let addToCart = () => {
-        setCart([...carts, { image: image, name: name, price: price }])
+        setCart([...carts, { image: image, name: name, speakerQuantity: speakerQuantity, price: price, id: new Date().getTime().toString() }])
         setShowSuccessMsg(!showSuccessMsg)
         setTimeout(() => {
             setShowSuccessMsg(showSuccessMsg)
         }, 3000)
+    }
+
+    let increaseQuantity = () => {
+        setSpeakerQuantity(prev => prev + 1)
+    }
+
+    let decreaseQuantity = () => {
+        setSpeakerQuantity(prev => prev - 1)
+
     }
 
     let { id } = useParams()
@@ -41,12 +50,12 @@ function Speakerinfo({ carts, setCart, showSignUp, cartQuantity, setCartQuantity
 
                         <div className="flex gap-10 items-center mt-2 md:mt-6">
                             <div className=" flex gap-6 items-center ">
-                                <button className="bg-[#192123] p-1 text-white"> <FaPlus /></button>
-                                <p className="font-semibold"></p>
-                                <button className="bg-[#192123] p-1 text-white"> <FaMinus /></button>
+                                <button onClick={decreaseQuantity} className="bg-[#192123] p-1 text-white"> <FaMinus /></button>
+                                <p className="font-semibold">{speakerQuantity}</p>
+                                <button onClick={increaseQuantity} className="bg-[#192123] p-1 text-white"> < FaPlus /></button>
                             </div>
                             <div className="flex-1">
-                                <button onClick={addToCart} className="md:w-[50%]  w-full flex items-center justify-center gap-8 rounded-sm bg-[#b4e900] p-2 text-[#192123] md:text-[15px] text-[12px] font-medium">ADD TO CART <IoCart /> </button>
+                                <button onClick={addToCart} className="md:w-[50%]  w-full flex items-center justify-center gap-8 rounded-sm bg-[#192123] p-2 text-[#fff] md:text-[15px] text-[12px] font-medium">ADD TO CART <IoCart /> </button>
                             </div>
                         </div>
                     </div>

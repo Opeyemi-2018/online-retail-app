@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom"
-import products from "./Product"
+import AllProducts from "./Product"
 import { useState } from "react"
 import { FaPlus } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa6"
@@ -8,7 +8,6 @@ import { FaArrowLeft } from "react-icons/fa6";
 
 function ProductInfo({ carts, setCart, showSignUp, itemQuantity, setItemQuantity, showSuccessMsg, setShowSuccessMsg }) {
 
-
     let addToCart = () => {
         // setCartCount(prevCount => prevCount + 1)
         setShowSuccessMsg(!showSuccessMsg)
@@ -16,7 +15,7 @@ function ProductInfo({ carts, setCart, showSignUp, itemQuantity, setItemQuantity
             setShowSuccessMsg(showSuccessMsg)
         }, 3000)
 
-        setCart([...carts, { image: image, name: name, price: price, itemQuantity: itemQuantity, id: new Date().getTime().toString() }])
+        setCart([...carts, { image, name, price, itemQuantity, id: new Date().getTime().toString() }])
         setItemQuantity(itemQuantity = 1)
     }
 
@@ -25,17 +24,17 @@ function ProductInfo({ carts, setCart, showSignUp, itemQuantity, setItemQuantity
     }
 
     let decreaseQuantity = () => {
-        if (itemQuantity <= 1) {
-            setItemQuantity(itemQuantity(1))
-        } else {
-            setItemQuantity(prev => prev - 1)
+        setItemQuantity(prev => prev - 1)
+        if (itemQuantity === 1) {
+            setItemQuantity(itemQuantity = 1)
         }
     }
 
-    // console.log(typeof itemQuantity);
 
 
-    let [myProduct, setMyProduct] = useState(products)
+
+
+    let [myProduct, setMyProduct] = useState(AllProducts)
     let { id } = useParams()
 
     let productInfo = myProduct.find((product) => product.id === id)
@@ -59,7 +58,7 @@ function ProductInfo({ carts, setCart, showSignUp, itemQuantity, setItemQuantity
 
 
 
-            <div className="max-w-[1250px] mx-auto px-5 mb-4 mt-[120px]">
+            <div className="max-w-[1250px] mx-auto px-5 mb-4 md:mt-[130px] mt-[120px]">
                 {/* <Link to={'..'} relative="path" ><FaArrowLeft className='text-gray-600 inline' size={30} /></Link> */}
                 <div className="flex justify-between  md:flex-row  flex-col gap-10 items-center">
                     <div className="flex items-center justify-center bg-[#f3f8ff] p-2 rounded-md shadow-md">
@@ -73,12 +72,12 @@ function ProductInfo({ carts, setCart, showSignUp, itemQuantity, setItemQuantity
 
                         <div className="flex gap-10 items-center mt-2 md:mt-6">
                             <div className=" flex gap-6 items-center ">
-                                <button onClick={increaseQuantity} className="bg-[#192123] p-1 text-white"> <FaPlus /></button>
-                                <p className="font-semibold">{itemQuantity}</p>
-                                <button onClick={decreaseQuantity} className="bg-[#192123] p-1 text-white"> <FaMinus /></button>
+                                <button onClick={decreaseQuantity} className="bg-[#192123] active:bg-[#999] md:p-2 p-1 text-white"> <FaMinus /></button>
+                                <p className="font-semibold md:text-2xl text-[14px] ">{itemQuantity}</p>
+                                <button onClick={increaseQuantity} className="bg-[#192123] active:bg-[#999] md:p-2 p-1 text-white"> <FaPlus /></button>
                             </div>
                             <div className="flex-1">
-                                <button onClick={addToCart} className="md:w-[50%]  w-full flex items-center justify-center gap-8 rounded-sm bg-[#b4e900] p-2 text-[#192123] md:text-[15px] text-[12px] font-medium">ADD TO CART <IoCart /> </button>
+                                <button onClick={addToCart} className="md:w-[50%]  w-full flex items-center justify-center gap-8 rounded-sm bg-[#192123] p-2 text-[#fff] active:bg-[#999] md:text-[15px] text-[12px] font-medium">ADD TO CART <IoCart /> </button>
                             </div>
                         </div>
                     </div>

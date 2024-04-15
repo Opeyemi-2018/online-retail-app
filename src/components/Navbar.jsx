@@ -27,9 +27,9 @@ function Navbar({ nav, setNav, showSignUp, setShowSignUp, cartCount, setCartCoun
                     <nav className="hidden md:flex">
                         <NavLink to={'/'} className={({ isActive }) => isActive ? 'activeStyle mr-10  hover:text-[#737e80] ease-in-out duration-500' : 'mr-10  hover:text-[#737e80] ease-in-out duration-500'}>HOME</NavLink>
                         <NavLink to={'/AllProduct'} className={({ isActive }) => isActive ? 'activeStyle mr-10  hover:text-[#737e80] ease-in-out duration-500' : 'mr-10  hover:text-[#737e80] ease-in-out duration-500'}>PRODUCTS</NavLink>
-                        <NavLink to={'/speaker'} className={({ isActive }) => isActive ? 'activeStyle mr-10  hover:text-[#737e80] ease-in-out duration-500' : 'mr-10  hover:text-[#737e80] ease-in-out duration-500'}>SPEAKER</NavLink>
-                        <NavLink to={'/gadget'} className={({ isActive }) => isActive ? 'activeStyle mr-10  hover:text-[#737e80] ease-in-out duration-500' : 'mr-10  hover:text-[#737e80] ease-in-out duration-500'}>HEADPHONE</NavLink>
-                        <NavLink className='mr-10  hover:text-[#737e80] ease-in-out duration-500'>CAMERA</NavLink>
+                        {/* <NavLink to={'/speaker'} className={({ isActive }) => isActive ? 'activeStyle mr-10  hover:text-[#737e80] ease-in-out duration-500' : 'mr-10  hover:text-[#737e80] ease-in-out duration-500'}>SPEAKER</NavLink>
+                        <NavLink to={'/headphone'} className={({ isActive }) => isActive ? 'activeStyle mr-10  hover:text-[#737e80] ease-in-out duration-500' : 'mr-10  hover:text-[#737e80] ease-in-out duration-500'}>HEADPHONE</NavLink>
+                        <NavLink className='mr-10  hover:text-[#737e80] ease-in-out duration-500'>PHONE</NavLink> */}
                     </nav>
                     {/* 'mr-10  hover:text-[#737e80] ease-in-out duration-500' */}
 
@@ -38,10 +38,10 @@ function Navbar({ nav, setNav, showSignUp, setShowSignUp, cartCount, setCartCoun
                             <MdAccountCircle className='text-[#192123]' size={21} /> <p className="md:flex hidden">Account</p> <IoIosArrowDown className={showSignUp ? 'flex  transition rotate-180' : 'flex  transition rotate'} size={21} /> </button>
                     </div>
 
-                    <NavLink to={'/cart'}>
+                    <NavLink to={'/cart'} className={({ isActive }) => isActive ? 'relative activeStyle hover:text-[#737e80] ease-in-out duration-500' : 'relative'}>
                         <div className='relative'>
                             <p className='absolute md:left-4 left-3 md:bottom-4 bottom-2 border border-white text-[#fff] bg-[#0c1012]  rounded-full h-full w-full  flex items-center justify-center whitespace-wrap'>{carts.length}</p>
-                            <IoCart className='  hover:text-[#b4e900] md:text-[40px] text-[20px] ease-in-out duration-500' />
+                            <IoCart className='md:text-[40px] text-[20px] ease-in-out duration-500' />
                         </div>
                     </NavLink>
                     <div onClick={handleNav} className="block md:hidden  ">
@@ -53,9 +53,9 @@ function Navbar({ nav, setNav, showSignUp, setShowSignUp, cartCount, setCartCoun
                         <nav className="">
                             <NavLink onClick={handleNav} to={'.'} className='block m-5 border-b border-gray-900'>HOME</NavLink>
                             <NavLink onClick={handleNav} to={'/AllProduct'} className='block m-5 border-b border-gray-900'>PRODUCTS</NavLink>
-                            <NavLink onClick={handleNav} to={'/speaker'} className='block m-5 border-b border-gray-900'>SPEAKER</NavLink>
-                            <NavLink onClick={handleNav} to={'/gadget'} className='block m-5 border-b border-gray-900'>HEADPHONE</NavLink>
-                            <NavLink onClick={handleNav} className='block m-5 border-b border-gray-900'>CAMERA</NavLink>
+                            {/* <NavLink onClick={handleNav} to={'/speaker'} className='block m-5 border-b border-gray-900'>SPEAKER</NavLink>
+                            <NavLink onClick={handleNav} to={'/headphone'} className='block m-5 border-b border-gray-900'>HEADPHONE</NavLink>
+                            <NavLink onClick={handleNav} className='block m-5 border-b border-gray-900'>PHONE</NavLink> */}
                         </nav>
 
                         <div className="m-5">
