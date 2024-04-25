@@ -7,10 +7,8 @@ import { useState } from 'react'
 import Cart from './components/Cart'
 // import Pratice from './pratice'
 import Footer from './components/Footer'
-import Gadget from './components/HeadPhone'
-import Speaker from './components/Speaker'
 import AllProduct from './components/AllProduct'
-import Speakerinfo from './components/Speakerinfo'
+// import Speakerinfo from './components/Speakerinfo'
 import HeadPhone from './components/HeadPhone'
 
 function App() {
@@ -18,7 +16,6 @@ function App() {
   let [cartCount, setCartCount] = useState(1)
   let [itemQuantity, setItemQuantity] = useState(1)
   let [speakerQuantity, setSpeakerQuantity] = useState(1)
-  let [showSignUp, setShowSignUp] = useState(false);
   let [showSuccessMsg, setShowSuccessMsg] = useState(false)
   let [nav, setNav] = useState(false)
 
@@ -27,15 +24,15 @@ function App() {
     <div className='relative'>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Navbar nav={nav} setNav={setNav} carts={carts} setCart={setCart} cartCount={cartCount} setCartCount={setCartCount} showSignUp={showSignUp} setShowSignUp={setShowSignUp} />} >
-            <Route index element={<Home showSignUp={showSignUp} setShowSignUp={setShowSignUp} />} />
-            <Route path='AllProduct' element={<AllProduct showSignUp={showSignUp} nav={nav} setNav={setNav} />} />
-            <Route path='AllProduct/:id' element={<ProductInfo itemQuantity={itemQuantity} setItemQuantity={setItemQuantity} showSignUp={showSignUp} carts={carts} setCart={setCart} cartCount={cartCount} setCartCount={setCartCount} showSuccessMsg={showSuccessMsg} setShowSuccessMsg={setShowSuccessMsg} />} />
-            <Route path='cart' element={<Cart itemQuantity={itemQuantity} setItemQuantity={setItemQuantity} cartCount={cartCount} setCartCount={setCartCount} showSignUp={showSignUp} carts={carts} setCart={setCart} />} />
+          <Route path='/' element={<Navbar nav={nav} setNav={setNav} carts={carts} setCart={setCart} cartCount={cartCount} setCartCount={setCartCount} />} >
+            <Route index element={<Home />} />
+            <Route path='AllProduct' element={<AllProduct nav={nav} setNav={setNav} />} />
+            <Route path='AllProduct/:id' element={<ProductInfo itemQuantity={itemQuantity} setItemQuantity={setItemQuantity} carts={carts} setCart={setCart} cartCount={cartCount} setCartCount={setCartCount} setShowSuccessMsg={setShowSuccessMsg} />} />
+            <Route path='cart' element={<Cart itemQuantity={itemQuantity} setItemQuantity={setItemQuantity} cartCount={cartCount} setCartCount={setCartCount} carts={carts} setCart={setCart} />} />
             {/* <Route path='practice' element={<Pratice />} /> */}
-            <Route path='headphone' element={<HeadPhone showSignUp={showSignUp} />} />
-            <Route path='Speaker' element={<Speaker showSignUp={showSignUp} />} />
-            <Route path='Speaker/:id' element={<Speakerinfo setSpeakerQuantity={setSpeakerQuantity} speakerQuantity={speakerQuantity} carts={carts} setCart={setCart} showSignUp={showSignUp} showSuccessMsg={showSuccessMsg} setShowSuccessMsg={setShowSuccessMsg} />} />
+            {/* <Route path='headphone' element={<HeadPhone  />} /> */}
+            {/* <Route path='Speaker' element={<Speaker showSignUp={showSignUp} />} /> */}
+            {/* <Route path='Speaker/:id' element={<Speakerinfo setSpeakerQuantity={setSpeakerQuantity} speakerQuantity={speakerQuantity} carts={carts} setCart={setCart} showSignUp={showSignUp} showSuccessMsg={showSuccessMsg} setShowSuccessMsg={setShowSuccessMsg} />} /> */}
           </Route>
         </Routes>
 
