@@ -28,13 +28,13 @@ function Navbar({ nav, setNav, cartCount, setCartCount, carts, setCart, search, 
                     </nav>
 
                     <div>
-                        <Link to={'/signup'} className='flex items-center justify-center md:gap-1 bg-[#fff]  text-[#192123] font-medium py-[1px] px-1 rounded-sm md:text-[13px] sl:text-1xl  hover:text-[#192123] ease-in-out duration-500'>
-                            <MdAccountCircle className='text-[#192123]' size={21} /> <p className="md:flex hidden">Account</p> <IoIosArrowDown className='flex  transition rotate' size={21} /> </Link>
+                        <Link to={'/signup'} className='flex items-center justify-center md:gap-1 md:bg-[#fff]  text-[#192123] font-medium py-[1px] px-1 rounded-sm md:text-[13px] sl:text-1xl  hover:text-[#192123] ease-in-out duration-500'>
+                            <MdAccountCircle className='md:text-[#192123] text-[#fff]' size={25} /> <p className="md:flex hidden">Account</p> <IoIosArrowDown className='md:flex hidden transition rotate' size={21} /> </Link>
                     </div>
 
                     <NavLink to={'/cart'} className={({ isActive }) => isActive ? 'relative activeStyle hover:text-[#737e80] ease-in-out duration-500' : 'relative'}>
                         <div className='relative'>
-                            <p className='absolute md:left-4 left-3 md:bottom-4 bottom-2 border border-white text-[#fff] bg-[#0c1012]  rounded-full h-full w-full  flex items-center justify-center whitespace-wrap'>{carts.length}</p>
+                            <p className='absolute md:left-4 left-3 md:bottom-4 bottom-2 border border-white text-[#fff] bg-[#0c1012] p-3 rounded-full h-full w-full  flex items-center justify-center whitespace-wrap'>{carts.length}</p>
                             <IoCart className='md:text-[40px] text-[20px] ease-in-out duration-500' />
                         </div>
                     </NavLink>

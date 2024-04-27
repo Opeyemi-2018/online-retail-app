@@ -36,7 +36,7 @@ function AllProduct() {
                     <Link to='..' relative="path"><FaArrowLeft className='text-[#fff] md:text-[25px]  text-[20px] inline ' /></Link>
                 </div>
             </div>
-            <div className='bg-white'>
+            <div className=''>
                 <div className='grid  grid-cols-3 gap-2 md:grid-cols-6  md:px-5 px-2   md:mt-[210px] mt-[170px] max-w-[1250px] mx-auto'>
                     {products.filter((product) => {
                         return search.trim().toLowerCase() === '' ? product : product.name.toLowerCase().includes(search.trim())
