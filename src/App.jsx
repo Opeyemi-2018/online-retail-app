@@ -8,8 +8,7 @@ import Cart from './components/Cart'
 // import Pratice from './pratice'
 import Footer from './components/Footer'
 import AllProduct from './components/AllProduct'
-// import Speakerinfo from './components/Speakerinfo'
-import HeadPhone from './components/HeadPhone'
+import SignUp from './components/SignUp'
 
 function App() {
   let [carts, setCart] = useState([])
@@ -29,7 +28,7 @@ function App() {
             <Route path='AllProduct' element={<AllProduct nav={nav} setNav={setNav} />} />
             <Route path='AllProduct/:id' element={<ProductInfo itemQuantity={itemQuantity} setItemQuantity={setItemQuantity} carts={carts} setCart={setCart} cartCount={cartCount} setCartCount={setCartCount} setShowSuccessMsg={setShowSuccessMsg} />} />
             <Route path='cart' element={<Cart itemQuantity={itemQuantity} setItemQuantity={setItemQuantity} cartCount={cartCount} setCartCount={setCartCount} carts={carts} setCart={setCart} />} />
-            {/* <Route path='practice' element={<Pratice />} /> */}
+            <Route path='signup' element={< SignUp />} />
             {/* <Route path='headphone' element={<HeadPhone  />} /> */}
             {/* <Route path='Speaker' element={<Speaker showSignUp={showSignUp} />} /> */}
             {/* <Route path='Speaker/:id' element={<Speakerinfo setSpeakerQuantity={setSpeakerQuantity} speakerQuantity={speakerQuantity} carts={carts} setCart={setCart} showSignUp={showSignUp} showSuccessMsg={showSuccessMsg} setShowSuccessMsg={setShowSuccessMsg} />} /> */}

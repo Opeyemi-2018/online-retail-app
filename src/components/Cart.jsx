@@ -68,7 +68,7 @@ function Cart({ carts, setCart }) {
     }
 
     return (
-        <div>
+        <div className="bg-gray-100">
             {notification && (<div className="bg-gray-300 p-4 md:w-[40%] w-[80%] rounded-md fixed transform -translate-x-1/2 -translate-y-1/2 md:top-[50%] top-[40%] left-[50%]">
                 <div className="flex items-center text-center justify-center flex-col">
                     <div><PiWarningCircleLight className="text-[#b72522]" size={40} /></div>
@@ -188,11 +188,11 @@ function Cart({ carts, setCart }) {
                                 {carts.map((cart) => {
                                     let { id, image, name, price, itemQuantity } = cart;
                                     return (
-                                        <div key={id} className="bg-white px-2 py-1 rounded-md mb-2">
+                                        <div key={id} className="bg-white shadow-md px-2 py-1 rounded-md mb-2">
                                             <div className='flex my-5 justify-between items-center'>
                                                 <div>
                                                     <div className="flex gap-4">
-                                                        <img className='p-2 rounded-md object-cover  bg-gray-200 md:w-[20%] w-20' src={image} alt={name} />
+                                                        <img className='p-2 rounded-md object-cover   md:w-[20%] w-20' src={image} alt={name} />
                                                         <div>
                                                             <h1 className="font-medium md:text-[14px] text-[11px]">{name}</h1>
                                                             <h1 className="font-medium text-gray-500">$ {price}</h1>

@@ -6,7 +6,7 @@ function Footer() {
     // let currentDate = new Date().getFullYear()
     return (
         <div className='bg-[#000] md:p-4 p-2'>
-            <div className='text-white max-w-[2000px] md:max-w-[1250px] md:px-5 px-2 mx-auto'>
+            <div className='text-white max-w-[2000px] md:max-w-[1250px] md:px-0 px-2 mx-auto'>
 
                 <h1 className="md:block flex items-center justify-center font-bold mb-2 md:text-[20px] text-[#adbdbc] text-[18px]">XX99</h1>
                 <div className="flex md:flex-row flex-col-reverse flex-col  justify-between">

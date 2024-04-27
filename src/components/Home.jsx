@@ -64,14 +64,14 @@ function Home() {
 
 
             <section>
-                <div className='md:px-5 py-2  bg-[#f3f8ff]'>
-                    <div className='bg-gray-200 md:rounded-md py-2 max-w-[1250px] mb-4 mx-auto md:px-5 px-2'>
-                        <div className='flex  justify-between items-center'>
-                            <div className='md:block flex items-center justify-center '>
+                <div className='py-2 md:px-5 px-2'>
+                    <div className=' shadow-lg bg-gray-200 md:rounded-md py-2 max-w-[1250px] mb-4 mx-auto md:px-5 px-2'>
+                        <div className='flex   items-center'>
+                            <div className=' items-center justify-center '>
                                 <img className='md:w-[70%] w-[full]' src={smilyLady} alt="" />
                             </div>
-                            <div className='p-4 '>
-                                <h1 className='text-[#f57247] animate-pulse md:text-3xl text-1xl py-2 md:font-extrabold font-medium'>XX99</h1>
+                            <div className='p-4 w-70'>
+                                <h1 className='text-[#f57247]  animate-pulse md:text-3xl text-1xl py-2 md:font-extrabold font-medium'>XX99</h1>
                                 <p className='text-[#000] md:text-2xl text-[14px] py-2 md:font-extrabold font-medium'>shop our topnotch headset and experience new sound wave</p>
                             </div>
                         </div>
@@ -80,10 +80,10 @@ function Home() {
             </section>
 
             <section>
-                <div className=' py-2 md:px-5 px-2 bg-[#f3f8ff]'>
-                    <div className='bg-[#f57247] max-w-[2000px] rounded-md md:max-w-[1250px]  pt-4 md:py-2 py-1 md:px-20 px-6  mx-auto  flex  justify-between items-center '>
+                <div className=' py-2 md:px-5 px-2 '>
+                    <div className='shadow-lg bg-[#f57247] max-w-[2000px] rounded-md md:max-w-[1250px]  pt-4 md:py-2 py-1 md:px-32 px-4  mx-auto  flex  justify-between items-center '>
                         <div>
-                            <img className='md:w-full w-[85%] object-cover' src={speaker} alt="" />
+                            <img className='md:w-full w-[85%] object-cover ' src={speaker} alt="" />
                         </div>
                         <div className='text-[#fff]'>
                             <h1 className='md:font-bold font-semibold md:text-3xl text-[14px]'>Upgrade to premium speaker today</h1>
