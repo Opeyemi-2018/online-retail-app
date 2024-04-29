@@ -17,6 +17,10 @@ a.activeStyle{
   text-decoration: underline;
 }
 
+a.act{
+  color: #737e80;
+}
+
 .animate-spin-slow{
   animation: spin-slow 5s linear infinite;
 }

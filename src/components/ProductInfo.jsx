@@ -9,15 +9,37 @@ import { FaArrowLeft } from "react-icons/fa6";
 function ProductInfo({ carts, setCart, itemQuantity, setItemQuantity, showSuccessMsg, setShowSuccessMsg }) {
 
     let addToCart = () => {
-        // setCartCount(prevCount => prevCount + 1)
-        setShowSuccessMsg(!showSuccessMsg)
-        setTimeout(() => {
-            setShowSuccessMsg(showSuccessMsg)
-        }, 3000)
+        // Create a new item object with provided details
+        const newItem = { id, image, name, price, itemQuantity };
 
-        setCart([...carts, { image, name, price, itemQuantity, id: new Date().getTime().toString() }])
-        setItemQuantity(itemQuantity = 1)
+        // Check if the item already exists in the cart
+        const existingItemIndex = carts.findIndex(item => item.id === id);
+
+        if (existingItemIndex !== -1) {
+            // If the item exists, update its quantity
+            const updatedCarts = [...carts];
+            updatedCarts[existingItemIndex].itemQuantity += itemQuantity;
+            // Update the cart state with the updated item quantity
+            setCart(updatedCarts);
+        } else {
+            // If the item doesn't exist, add it to the cart
+            // Update the cart state with the new item
+            setCart(prevCart => [...prevCart, newItem]);
+        }
+
+        // Reset item quantity to 1 after adding to cart
+        // Update the itemQuantity state
+        setItemQuantity(1);
+
+        // Show success message
+        // Set the success message state to true
+        setShowSuccessMsg(true);
+        // Hide the success message after 3 seconds
+        setTimeout(() => {
+            setShowSuccessMsg(false);
+        }, 3000);
     }
+
 
     let increaseQuantity = () => {
         setItemQuantity(prev => prev + 1)
@@ -29,8 +51,6 @@ function ProductInfo({ carts, setCart, itemQuantity, setItemQuantity, showSucces
             setItemQuantity(itemQuantity = 1)
         }
     }
-
-
 
 
 

@@ -20,7 +20,7 @@ function Navbar({ nav, setNav, cartCount, setCartCount, carts, setCart, search, 
     return (
         <div>
             <div className="md:bg-[#000] bg-[#000] w-full z-30 pb-1 fixed top-0  ">
-                <div className="text-white   border-b border-[#fff] max-w-[1250px]  mt-4   h-16 md:px-0 px-2 mx-auto flex justify-between items-center">
+                <div className="text-white   border-b border-[#fff] max-w-[1250px]  mt-4   h-16 md:px-3 px-2 mx-auto flex justify-between items-center">
                     <NavLink to={'/'} className="md:basis-1/4 basis-1/2 text-[#f57247] animate-pulse inline md:text-3xl text-2xl font-extrabold">XX99</NavLink>
                     <nav className="hidden md:flex">
                         <NavLink to={'/'} className={({ isActive }) => isActive ? 'activeStyle mr-10  hover:text-[#737e80] ease-in-out duration-500' : 'mr-10  hover:text-[#737e80] ease-in-out duration-500'}>HOME</NavLink>
@@ -28,8 +28,8 @@ function Navbar({ nav, setNav, cartCount, setCartCount, carts, setCart, search, 
                     </nav>
 
                     <div>
-                        <Link to={'/signup'} className='flex items-center justify-center md:gap-1 md:bg-[#fff]  text-[#192123] font-medium py-[1px] px-1 rounded-sm md:text-[13px] sl:text-1xl  hover:text-[#192123] ease-in-out duration-500'>
-                            <MdAccountCircle className='md:text-[#192123] text-[#fff]' size={25} /> <p className="md:flex hidden">Account</p> <IoIosArrowDown className='md:flex hidden transition rotate' size={21} /> </Link>
+                        <NavLink to={'/signup'} className={({ isActive }) => isActive ? 'act  md:text-[13px] sl:text-1xl' : ' text-[#fff] font-medium  md:text-[13px] sl:text-1xl'}>
+                            <MdAccountCircle className='sm:text-3xl text-2xl' />  </NavLink>
                     </div>
 
                     <NavLink to={'/cart'} className={({ isActive }) => isActive ? 'relative activeStyle hover:text-[#737e80] ease-in-out duration-500' : 'relative'}>

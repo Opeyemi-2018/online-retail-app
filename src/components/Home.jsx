@@ -8,7 +8,7 @@ import { IoCart } from "react-icons/io5";
 
 import products from './Product'
 import { useState } from 'react';
-import smilyLady from '../assets/images/smily-lady.png'
+import woman from '../assets/images/woman.png'
 
 function Home() {
     return (
@@ -16,9 +16,9 @@ function Home() {
 
             {/* <section className={showSignUp ? 'filter blur-[5px] brightness-[0.7]' : ''}> */}
             <div className='mt-[80px]'>
-                <div className='bg-[#000] md:px-0 px-5  pt-5'>
+                <div className='bg-[#000] md:px-3 px-5  pt-5'>
 
-                    <div className='text-white hidden md:px-0 px-2 md:flex md:flex-row  justify-between items-center max-w-[2000px]  md:max-w-[1250px] mx-auto'>
+                    <div className='text-white hidden md:px-0 px-2 sm:flex sm:flex-row  justify-between items-center max-w-[2000px]  md:max-w-[1250px] mx-auto'>
                         <div className=''>
                             <p className='md:text-1xl pb-3 space-x-10 text-[15px] tracking-widest text-[#adbdbc]'>NEW PRODUCT</p>
                             <h1 className='md:text-5xl pb-3 text-2xl  font-extrabold'>XX99 MARK II GADGET</h1>
@@ -39,7 +39,7 @@ function Home() {
                         </div>
                     </div>
 
-                    <div className=' text-white relative md:hidden w-full'>
+                    <div className=' text-white relative sm:hidden w-full'>
                         <div className='absolute w-full top-36 left-[50%] translate-x-[-50%] translate-y-[-50%] flex flex-col items-center justify-items-center z-10 text-center'>
                             <p className='md:text-1xl pb-3 space-x-10 text-[15px] tracking-widest text-gray-600'>NEW PRODUCT</p>
                             <h1 className='md:text-5xl pb-3 text-2xl  font-extrabold'>XX99 MARK II GADGET</h1>
@@ -64,15 +64,15 @@ function Home() {
 
 
             <section>
-                <div className='py-2 md:px-5 px-2'>
-                    <div className=' shadow-lg bg-gray-200 md:rounded-md py-2 max-w-[1250px] mb-4 mx-auto md:px-5 px-2'>
-                        <div className='flex   items-center'>
-                            <div className=' items-center justify-center '>
-                                <img className='md:w-[70%] w-[full]' src={smilyLady} alt="" />
+                <div className='md:px-5 my-2 px-2'>
+                    <div className='shadow-lg bg-gray-200 md:rounded-md  lg:px-32 md:px-10  px-4 md:px-5 '>
+                        <div className='flex  flex-row-reverse items-center'>
+                            <div className=''>
+                                <img className='w-[full]' src={woman} alt="" />
                             </div>
                             <div className='p-4 w-70'>
                                 <h1 className='text-[#f57247]  animate-pulse md:text-3xl text-1xl py-2 md:font-extrabold font-medium'>XX99</h1>
-                                <p className='text-[#000] md:text-2xl text-[14px] py-2 md:font-extrabold font-medium'>shop our topnotch headset and experience new sound wave</p>
+                                <p className='text-[#000] md:text-2xl text-[14px] md:font-extrabold font-medium'>shop our topnotch headset and experience new sound wave</p>
                             </div>
                         </div>
                     </div>
@@ -81,12 +81,12 @@ function Home() {
 
             <section>
                 <div className=' py-2 md:px-5 px-2 '>
-                    <div className='shadow-lg bg-[#f57247] max-w-[2000px] rounded-md md:max-w-[1250px]  pt-4 md:py-2 py-1 md:px-32 px-4  mx-auto  flex  justify-between items-center '>
+                    <div className='shadow-lg bg-[#f57247]  rounded-md  pt-2 lg:px-32 md:px-10  px-4  mx-auto   flex  justify-between items-center '>
                         <div>
                             <img className='md:w-full w-[85%] object-cover ' src={speaker} alt="" />
                         </div>
                         <div className='text-[#fff]'>
-                            <h1 className='md:font-bold font-semibold md:text-3xl text-[14px]'>Upgrade to premium speaker today</h1>
+                            <h1 className='md:font-bold font-semibold md:text-3xl text-[14px] text-left'>Upgrade to premium speaker today</h1>
                             <p className='md:py-4 md:text-[15px] text-[14px]'> they are phenomenally built to deliver truly remarkable sound</p>
                             <Link to={'/AllProduct'} style={{ letterSpacing: '4px' }} className='text-[#fff] block text-center bg-[#000] md:w-[50%] md:mt-0 mt-2  md:text-[16px] text-[11px] md:p-1 p-[4px]  animate-bounce'>CHECK IT OUT</Link>
                         </div>
