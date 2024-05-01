@@ -71,7 +71,7 @@ function ProductInfo({ carts, setCart, itemQuantity, setItemQuantity, showSucces
                 </div>
             )}
 
-            <div className=" py-2 mt-[150px] fixed top-[-12%] bg-[#000] z-30 w-full">
+            <div className=" py-2 mt-[150px] fixed top-[-12%] bg-[#000] z-20 w-full">
                 <div className="max-w-[1250px] md:px-5 px-2 mx-auto">
                     <Link to={'..'} relative="path"><FaArrowLeft className='text-[#fff]  md:text-[25px] text-[20px] inline ' /></Link>
                 </div>
@@ -104,7 +104,7 @@ function ProductInfo({ carts, setCart, itemQuantity, setItemQuantity, showSucces
                     </div>
                 </div>
 
-                <div className=" mt-[70px] ">
+                {/* <div className=" mt-[70px] ">
                     <h1 className="text-center border border-b-[#0c1012] mx-auto max-w-[200px] font-bold md:text-2xl text-[#0c1012]">You may also like</h1>
                     <div className="w-full my-4  overflow-x-scroll">
                         <div className="flex  items-center justify-center gap-6">
@@ -121,7 +121,7 @@ function ProductInfo({ carts, setCart, itemQuantity, setItemQuantity, showSucces
                             })}
                         </div>
                     </div >
-                </div>
+                </div> */}
             </div>
         </div>
         // </div>

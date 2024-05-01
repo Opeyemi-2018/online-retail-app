@@ -42,7 +42,7 @@ function Navbar({ nav, setNav, cartCount, setCartCount, carts, setCart, search, 
                         {nav ? <IoClose size={25} /> : <FaBars size={25} />}
                     </div>
 
-                    <div className={nav ? "fixed z-50 md:hidden top-0 left-0 h-full w-[60%] border-r border-gray-900 bg-[#000] ease-in-out duration-500" : 'fixed left-[-100%]'}>
+                    <div className={nav ? "fixed z-50  md:hidden top-0 left-0 h-full w-[60%] border-r border-gray-900 bg-[#000] ease-in-out duration-500" : 'fixed left-[-100%]'}>
                         <h1 className="w-[50%] text-[#f57247] animate-pulse m-5 text-2xl font-extrabold">XX99</h1>
                         <nav className="">
                             <NavLink onClick={handleNav} to={'.'} className='block m-5 border-b border-gray-900'>HOME</NavLink>

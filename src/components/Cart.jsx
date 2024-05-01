@@ -111,16 +111,16 @@ function Cart({ carts, setCart }) {
                 <div className="md:mt-[110px] mt-[80px] py-5 rel ">
                     <div className='max-w-[1250px] md:px-5 px-2 mx-auto'>
                         <div className="flex md:flex-row flex-col flex-col-reverse gap-4 justify-between">
-                            {pay && <div className="bg-white w-full md:p-8 p-4">
-                                <h1 className="md:text-xl md:font-medium font-normal">CHECKOUT</h1>
+                            {pay && <div className="bg-white w-full  md:p-8  p-4">
+                                <h1 className="md:text-xl md:font-medium  font-normal">CHECKOUT</h1>
 
                                 <form onSubmit={handlePayment}>
                                     <div className="my-[20px]">
-                                        <h2 className="my-1 text-[#143f3c] md:font-semibold font-medium">BILLING DETAILS</h2>
-                                        <div className="grid gap-4 md:grid-cols-2">
+                                        <h2 className="text-[#000] md:font-semibold font-medium">BILLING DETAILS</h2>
+                                        <div className="grid gap-2 md:grid-cols-2">
                                             <div>
                                                 <label>Name</label>
-                                                <input className="border border-gray-400 w-full rounded-sm p-[1px]  outline-none" type="text" />
+                                                <input className="border border-gray-400 w-full rounded-sm  outline-none" type="text" />
                                             </div>
                                             <div>
                                                 <label>Email Address</label>
@@ -135,11 +135,11 @@ function Cart({ carts, setCart }) {
 
 
                                     <div>
-                                        <h2 className="my-1 text-[#143f3c] md:font-semibold font-medium">SHIPPING INFO</h2>
-                                        <div className="grid gap-4 md:grid-cols-2">
+                                        <h2 className="text-[#000] md:font-semibold font-medium">SHIPPING INFO</h2>
+                                        <div className="grid gap-2 md:grid-cols-2">
                                             <div className="col-span-2">
                                                 <label>Address</label>
-                                                <input className="border border-gray-400 w-full rounded-sm p-[1px]  outline-none" type="text" />
+                                                <input className="border border-gray-400 w-full rounded-sm  outline-none" type="text" />
                                             </div>
                                             <div>
                                                 <label>Zip Code</label>
@@ -157,13 +157,12 @@ function Cart({ carts, setCart }) {
                                     </div>
 
                                     <div className="my-[20px]">
-                                        <h2 className="my-1 text-[#143f3c] md:font-semibold font-medium">PAYMENT DETAILS</h2>
+                                        <h2 className="text-[#000] md:font-semibold font-medium">PAYMENT DETAILS</h2>
                                         <h3 className="py-1">payment method</h3>
-                                        <div className="flex justify-between gap-4 items-center">
+                                        <div className="flex justify-between md:gap-4 gap-8 items-center">
                                             <button className="border border-[#b72522] md:py-[2px] py-[1px] rounded-md  px-4 flex items-center justify-between  font-semibold text-gray-700 w-full whitespace-nowrap md:text-[18px] text-[14px]"> e-Money
                                                 <input className="form-radio  h-5 w-5 accent-orange-700" name="radio-buttons" type="radio" />
                                             </button>
-
                                             <button className="border  border-[#b72522] md:py-[2px] py-[1px] rounded-md  px-4 flex  items-center justify-between  font-semibold text-gray-700 w-full whitespace-nowrap md:text-[18px] text-[14px]"> cash on delivery
                                                 <input className="form-radio h-5 w-5 accent-orange-700" name="radio-buttons" type="radio" />
                                             </button>
@@ -180,6 +179,7 @@ function Cart({ carts, setCart }) {
                                             </div>
                                         </div>
                                     </div>
+                                    <button style={{ letterSpacing: '4px' }} className="bg-[#f57247] w-full md:p-2 mt-4 p-1 text-white font-semibold rounded-md">send</button>
                                 </form>
                             </div>}
 

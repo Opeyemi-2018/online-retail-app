@@ -4,7 +4,6 @@ import headphone from '../assets/images/headphone.png'
 import speaker from '../assets/images/speaker-1.png'
 import { IoIosArrowForward } from "react-icons/io";
 import { ReactTyped } from "react-typed";
-import { IoCart } from "react-icons/io5";
 
 import products from './Product'
 import { useState } from 'react';
@@ -67,10 +66,10 @@ function Home() {
                 <div className='md:px-5 my-2 px-2'>
                     <div className='shadow-lg bg-gray-200 md:rounded-md  lg:px-32 md:px-10  px-4 md:px-5 '>
                         <div className='flex  flex-row-reverse items-center'>
-                            <div className=''>
+                            <div className='basis-[40%]'>
                                 <img className='w-[full]' src={woman} alt="" />
                             </div>
-                            <div className='p-4 w-70'>
+                            <div className='p-4 basis-[60%]'>
                                 <h1 className='text-[#f57247]  animate-pulse md:text-3xl text-1xl py-2 md:font-extrabold font-medium'>XX99</h1>
                                 <p className='text-[#000] md:text-2xl text-[14px] md:font-extrabold font-medium'>shop our topnotch headset and experience new sound wave</p>
                             </div>

@@ -34,7 +34,6 @@ function App() {
             {/* <Route path='Speaker/:id' element={<Speakerinfo setSpeakerQuantity={setSpeakerQuantity} speakerQuantity={speakerQuantity} carts={carts} setCart={setCart} showSignUp={showSignUp} showSuccessMsg={showSuccessMsg} setShowSuccessMsg={setShowSuccessMsg} />} /> */}
           </Route>
         </Routes>
-
         <Footer />
       </BrowserRouter>
     </div>

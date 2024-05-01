@@ -2,7 +2,7 @@ import goggleLogo from '../assets/images/google-logo.png'
 
 function SignUp() {
   return (
-    <div className='bg-gray-100 py-16 mt-[90px]'>
+    <div className='bg-gray-100 py-16 mt-[85px]'>
       <div className='md:max-w-[500px] max-w-[300px] mx-auto '>
         <div className=''>
           <div className='mb-8'>
