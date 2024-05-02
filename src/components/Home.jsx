@@ -8,11 +8,11 @@ import speaker4 from '../assets/images/speaker-4.png'
 
 function Home() {
     return (
-        <div>
+        <div className=''>
 
             {/* <section className={showSignUp ? 'filter blur-[5px] brightness-[0.7]' : ''}> */}
             <div className='mt-[80px]'>
-                <div className='bg-[#000] md:px-3 px-5  pt-5'>
+                <div className='bg-[#000]   pt-5'>
 
                     <div className='text-white hidden md:px-0 px-2 sm:flex sm:flex-row  justify-between items-center max-w-[2000px]  md:max-w-[1250px] mx-auto'>
                         <div className=''>
@@ -21,11 +21,11 @@ function Home() {
                             <div className='md:flex items-center py-3 hidden '>
                                 <p>Shop with us today  </p>
 
-                                <ReactTyped className='text-orange-700  ' strings={['For Exclusive Deal', 'and Enjoy Quality Product']} typeSpeed={100} backSpeed={20} loop />
+                                <ReactTyped className='text-orange-600  ' strings={['For Exclusive Deal', 'and Enjoy Quality Product']} typeSpeed={100} backSpeed={20} loop />
                             </div>
                             <p className='pb-3 text-[#adbdbc]'>Discover the perfect blend of style and comfort with our latest collection</p>
                             <div className=''>
-                                <Link to={'/AllProduct'} style={{ letterSpacing: '5px' }} className=' bg-orange-700 font-bold md:flex items-center text-[#fff]  justify-between hidden md:text2xl text-1xl px-4 py-2 my-4 w-[40%] rounded-sm'>EXPLORE
+                                <Link to={'/AllProduct'} style={{ letterSpacing: '5px' }} className=' bg-orange-600 font-bold md:flex items-center text-[#fff]  justify-between hidden md:text2xl text-1xl px-4 py-2 my-4 w-[40%] rounded-sm'>EXPLORE
                                     <IoIosArrowForward className='text-[#fff]'></IoIosArrowForward >
                                 </Link>
                             </div>
@@ -45,10 +45,10 @@ function Home() {
                             <img className=' w-[100%] top ' src={headset2} alt="" />
                             <div className=' items-center justify-center flex mt-[-30px]'>
                                 <p className='text-[12px] whitespace-nowrap'>Shop with us today  </p>
-                                <ReactTyped className='text-orange-700 ml-2 whitespace-nowrap' strings={['For Exclusive Deal', 'and Enjoy Quality Product']} typeSpeed={100} backSpeed={50} loop />
+                                <ReactTyped className='text-orange-600 ml-2 whitespace-nowrap' strings={['For Exclusive Deal', 'and Enjoy Quality Product']} typeSpeed={100} backSpeed={50} loop />
                             </div>
                             <div className='  flex items-center justify-center pb-4 mt-6'>
-                                <Link to={'/AllProduct'} className='bg-orange-700 text-[#fff] flex items-center justify-between   text-[14px] px-2 py-1 w-[40%] rounded-sm'>EXPLORE
+                                <Link to={'/AllProduct'} className='bg-orange-600 text-[#fff] flex items-center justify-between   text-[14px] px-2 py-1 w-[40%] rounded-sm'>EXPLORE
                                     <IoIosArrowForward className='text-[#fff]'></IoIosArrowForward ></Link>
                             </div>
                         </div>
@@ -61,14 +61,14 @@ function Home() {
 
             <section>
                 <div className='md:px-5 my-2 px-2'>
-                    <div className='shadow-lg bg-gray-200 md:rounded-md  lg:px-32 md:px-10  px-4 md:px-5 '>
-                        <div className='flex  flex-row-reverse items-center'>
+                    <div className='shadow-lg bg-gray-200 md:rounded-md  lg:px-32 md:px-10  px-4 md:px-5 max-w-[2000px]  md:max-w-[1250px] mx-auto'>
+                        <div className='flex  md:flex-row-reverse sm:flex-row flex-col items-center'>
                             <div className='basis-[40%] '>
                                 <img className='w-full block' src={woman} alt="" />
                             </div>
                             <div className='p-4 basis-[60%]'>
-                                <h1 className='text-orange-700 animate-pulse md:text-3xl text-1xl py-2 md:font-extrabold font-medium'>XX99</h1>
-                                <p className='text-[#000] md:text-2xl text-[14px] md:font-extrabold font-medium'>shop our topnotch headset and experience new sound wave</p>
+                                <h1 className='text-orange-600 animate-pulse md:text-3xl text-1xl py-2 md:font-extrabold font-medium'>XX99</h1>
+                                <p className='text-[#000] md:text-2xl text-[14px] md:font-extrabold font-medium'>shop our topnotch gadget and experience new luxurious life</p>
                             </div>
                         </div>
                     </div>
@@ -77,7 +77,7 @@ function Home() {
 
             <section>
                 <div className=' py-2 md:px-5 px-2 '>
-                    <div className='shadow-lg bg-orange-700 rounded-md  md:pt-4 md:py-0 py-4  lg:px-32 md:px-10  px-4   flex sm:flex-row flex-col  justify-between items-center '>
+                    <div className='shadow-lg bg-orange-600 rounded-md  md:pt-4 md:py-0 py-4  lg:px-32 md:px-10  px-4 max-w-[2000px]  md:max-w-[1250px] mx-auto  flex sm:flex-row flex-col  justify-between items-center '>
                         <div>
                             <img className='md:w-full w-[85%] object-cover ' src={speaker4} alt="" />
                         </div>

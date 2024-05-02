@@ -55,7 +55,7 @@ function AllProduct() {
                                             <h1 className='text-[#000300] whitespace-nowrap md:text-[17px] text-[13px] font-semibold md:font-bolder'>{name}</h1>
                                             <div className='flex items-center justify-center gap-4 mt-1'>
                                                 <p className='text-gray-700 md:text-sm text-[10px]'>SHOP</p>
-                                                <IoIosArrowForward className='text-[#f57247]'></IoIosArrowForward >
+                                                <IoIosArrowForward className='text-orange-600'></IoIosArrowForward >
                                             </div>
                                         </div>
                                     </div>

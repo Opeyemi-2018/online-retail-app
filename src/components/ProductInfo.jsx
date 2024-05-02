@@ -98,7 +98,7 @@ function ProductInfo({ carts, setCart, itemQuantity, setItemQuantity, showSucces
                                 <button onClick={increaseQuantity} className="text-[#555] active:bg-[#999] p-2  text-black"> <FaPlus /></button>
                             </div>
                             <div className="flex-1">
-                                <button onClick={addToCart} className="md:w-[50%]  w-full flex items-center justify-center gap-8 rounded-sm bg-[#f57247] p-2 text-[#fff] active:bg-orange-700 md:text-[12px] text-[11px] font-medium">ADD TO CART <IoCart /> </button>
+                                <button onClick={addToCart} className="md:w-[50%]  w-full flex items-center justify-center gap-8 rounded-sm bg-orange-600 p-2 text-[#fff] active:bg-orange-700 md:text-[12px] text-[11px] font-medium">ADD TO CART <IoCart /> </button>
                             </div>
                         </div>
                     </div>

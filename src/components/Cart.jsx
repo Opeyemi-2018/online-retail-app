@@ -104,7 +104,7 @@ function Cart({ carts, setCart }) {
                         </div>
                         <h1 className="text-[17px] text-center md:text-[22px]">Your cart is empty!</h1>
                         <p className="text-[17px] text-center md:text-[22px]">Browse our category and discover our best deals!</p>
-                        <Link to={'/Allproduct'}><button className='animate-bounce bg-[#f57247] rounded-sm my-4 w-full md:p-1 text-[#fff] text-[18px] md:text-[20px]'>START SHOPPING</button> </Link>
+                        <Link to={'/Allproduct'}><button className='animate-bounce bg-orange-600 rounded-sm my-4 w-full md:p-1 text-[#fff] text-[18px] md:text-[20px]'>START SHOPPING</button> </Link>
 
                     </div>
                 </div>
@@ -180,7 +180,7 @@ function Cart({ carts, setCart }) {
                                             </div>
                                         </div>
                                     </div>
-                                    <button style={{ letterSpacing: '4px' }} className="bg-[#f57247] w-full md:p-2 mt-4 p-1 text-white font-semibold rounded-md">send</button>
+                                    <button style={{ letterSpacing: '4px' }} className="bg-orange-600 w-full md:p-2 mt-4 p-1 text-white font-semibold rounded-md">send</button>
                                 </form>
                             </div>}
 
@@ -223,7 +223,7 @@ function Cart({ carts, setCart }) {
                                     <div></div>
                                 }
 
-                                {!pay && <button onClick={() => setPay(!pay)} className="rounded-sm bg-[#f57247] text-white font-normal mt-2 md:font-medium w-full p-2 text-[13px]">CONTINUE & PAY</button>}
+                                {!pay && <button onClick={() => setPay(!pay)} className="rounded-sm bg-orange-600 text-white font-normal mt-2 md:font-medium w-full p-2 text-[13px]">CONTINUE & PAY</button>}
                             </div>
                         </div>
                     </div>

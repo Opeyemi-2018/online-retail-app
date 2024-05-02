@@ -14,7 +14,7 @@ function SignUp() {
           <form className='flex flex-col  mt-4'>
             <input className='border border-gray-300 mb-4 md:p-[8px]  p-[7px] rounded-md shadow-md placeholder-gray-400 text-[12px]' type="text" placeholder='Enter email address' />
             <input className='border border-gray-300 mb-6 md:p-[8px] p-[7px] rounded-md mt shadow-md  placeholder-gray-400 text-[12px]' type="text" placeholder='Create a password' />
-            <button className=' bg-[#f57247] mt w-full  p-[6px] text-white rounded-md'>Submit</button>
+            <button className=' bg-orange-600 mt w-full  p-[6px] text-white rounded-md'>Submit</button>
 
             <div className='flex items-center  justify-center my-4'>
               <hr className='w-[38%] h-[40%] text-[#555]' />

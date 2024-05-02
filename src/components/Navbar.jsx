@@ -21,7 +21,7 @@ function Navbar({ nav, setNav, cartCount, setCartCount, carts, setCart, search, 
         <div>
             <div className="md:bg-[#000] bg-[#000] w-full z-30 pb-1 fixed top-0  ">
                 <div className="text-white   border-b border-[#fff] max-w-[1250px]  mt-4   h-16 md:px-3 px-2 mx-auto flex justify-between items-center">
-                    <NavLink to={'/'} className="md:basis-1/4 basis-1/2 text-[#f57247] animate-pulse inline md:text-3xl text-2xl font-extrabold">XX99</NavLink>
+                    <NavLink to={'/'} className="md:basis-1/4 basis-1/2 text-orange-600 animate-pulse inline md:text-3xl text-2xl font-extrabold">XX99</NavLink>
                     <nav className="hidden md:flex">
                         <NavLink to={'/'} className={({ isActive }) => isActive ? 'activeStyle mr-10  hover:text-[#737e80] ease-in-out duration-500' : 'mr-10  hover:text-[#737e80] ease-in-out duration-500'}>HOME</NavLink>
                         <NavLink to={'/AllProduct'} className={({ isActive }) => isActive ? 'activeStyle mr-10  hover:text-[#737e80] ease-in-out duration-500' : 'mr-10  hover:text-[#737e80] ease-in-out duration-500'}>PRODUCTS</NavLink>
@@ -43,7 +43,7 @@ function Navbar({ nav, setNav, cartCount, setCartCount, carts, setCart, search, 
                     </div>
 
                     <div className={nav ? "fixed z-50  md:hidden top-0 left-0 h-full w-[60%] border-r border-gray-900 bg-[#000] ease-in-out duration-500" : 'fixed left-[-100%]'}>
-                        <h1 className="w-[50%] text-[#f57247] animate-pulse m-5 text-2xl font-extrabold">XX99</h1>
+                        <h1 className="w-[50%] text-orange-600 animate-pulse m-5 text-2xl font-extrabold">XX99</h1>
                         <nav className="">
                             <NavLink onClick={handleNav} to={'.'} className='block m-5 border-b border-gray-900'>HOME</NavLink>
                             <NavLink onClick={handleNav} to={'/AllProduct'} className='block m-5 border-b border-gray-900'>PRODUCTS</NavLink>
