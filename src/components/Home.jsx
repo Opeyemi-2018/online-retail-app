@@ -4,6 +4,7 @@ import speaker from '../assets/images/speaker-1.png'
 import { IoIosArrowForward } from "react-icons/io";
 import { ReactTyped } from "react-typed";
 import woman from '../assets/images/woman.png'
+import speaker4 from '../assets/images/speaker-4.png'
 
 function Home() {
     return (
@@ -20,11 +21,11 @@ function Home() {
                             <div className='md:flex items-center py-3 hidden '>
                                 <p>Shop with us today  </p>
 
-                                <ReactTyped className='text-[#f57247] ml-2 ' strings={['For Exclusive Deal', 'and Enjoy Quality Product']} typeSpeed={100} backSpeed={20} loop />
+                                <ReactTyped className='text-orange-700  ' strings={['For Exclusive Deal', 'and Enjoy Quality Product']} typeSpeed={100} backSpeed={20} loop />
                             </div>
                             <p className='pb-3 text-[#adbdbc]'>Discover the perfect blend of style and comfort with our latest collection</p>
                             <div className=''>
-                                <Link to={'/AllProduct'} style={{ letterSpacing: '5px' }} className=' bg-[#f57247] font-bold md:flex items-center text-[#fff]  justify-between hidden md:text2xl text-1xl px-4 py-2 my-4 w-[40%] rounded-sm'>EXPLORE
+                                <Link to={'/AllProduct'} style={{ letterSpacing: '5px' }} className=' bg-orange-700 font-bold md:flex items-center text-[#fff]  justify-between hidden md:text2xl text-1xl px-4 py-2 my-4 w-[40%] rounded-sm'>EXPLORE
                                     <IoIosArrowForward className='text-[#fff]'></IoIosArrowForward >
                                 </Link>
                             </div>
@@ -44,10 +45,10 @@ function Home() {
                             <img className=' w-[100%] top ' src={headset2} alt="" />
                             <div className=' items-center justify-center flex mt-[-30px]'>
                                 <p className='text-[12px] whitespace-nowrap'>Shop with us today  </p>
-                                <ReactTyped className='text-[#f57247] ml-2 whitespace-nowrap' strings={['For Exclusive Deal', 'and Enjoy Quality Product']} typeSpeed={100} backSpeed={50} loop />
+                                <ReactTyped className='text-orange-700 ml-2 whitespace-nowrap' strings={['For Exclusive Deal', 'and Enjoy Quality Product']} typeSpeed={100} backSpeed={50} loop />
                             </div>
                             <div className='  flex items-center justify-center pb-4 mt-6'>
-                                <Link to={'/AllProduct'} className='bg-[#f57247] text-[#fff] flex items-center justify-between   text-[14px] px-2 py-1 w-[40%] rounded-sm'>EXPLORE
+                                <Link to={'/AllProduct'} className='bg-orange-700 text-[#fff] flex items-center justify-between   text-[14px] px-2 py-1 w-[40%] rounded-sm'>EXPLORE
                                     <IoIosArrowForward className='text-[#fff]'></IoIosArrowForward ></Link>
                             </div>
                         </div>
@@ -66,7 +67,7 @@ function Home() {
                                 <img className='w-full block' src={woman} alt="" />
                             </div>
                             <div className='p-4 basis-[60%]'>
-                                <h1 className='text-[#f57247]  animate-pulse md:text-3xl text-1xl py-2 md:font-extrabold font-medium'>XX99</h1>
+                                <h1 className='text-orange-700 animate-pulse md:text-3xl text-1xl py-2 md:font-extrabold font-medium'>XX99</h1>
                                 <p className='text-[#000] md:text-2xl text-[14px] md:font-extrabold font-medium'>shop our topnotch headset and experience new sound wave</p>
                             </div>
                         </div>
@@ -76,14 +77,14 @@ function Home() {
 
             <section>
                 <div className=' py-2 md:px-5 px-2 '>
-                    <div className='shadow-lg bg-[#f57247]  rounded-md  pt-2 lg:px-32 md:px-10  px-4  mx-auto   flex  justify-between items-center '>
+                    <div className='shadow-lg bg-orange-700 rounded-md  md:pt-4 md:py-0 py-4  lg:px-32 md:px-10  px-4   flex sm:flex-row flex-col  justify-between items-center '>
                         <div>
-                            <img className='md:w-full w-[85%] object-cover ' src={speaker} alt="" />
+                            <img className='md:w-full w-[85%] object-cover ' src={speaker4} alt="" />
                         </div>
-                        <div className='text-[#fff]'>
-                            <h1 className='md:font-bold font-semibold md:text-3xl text-[14px] text-left'>Upgrade to premium speaker today</h1>
-                            <p className='md:py-4 md:text-[15px] text-[14px]'> they are phenomenally built to deliver truly remarkable sound</p>
-                            <Link to={'/AllProduct'} style={{ letterSpacing: '4px' }} className='text-[#fff] block text-center bg-[#000] md:w-[50%] md:mt-0 mt-2  md:text-[16px] text-[11px] md:p-1 p-[4px]  animate-bounce'>CHECK IT OUT</Link>
+                        <div className='text-[#fff] pt-4 md:w-[50%] mx-auto'>
+                            <h1 className='md:font-bold py-1 font-semibold mx-auto md:text-3xl sm:text-left text-center text-[24px] '>zx9 speaker</h1>
+                            <p className='py-4 md:text-[20px] text-[17px] sm:text-left text-center'>Upgrade to premium speaker today they are phenomenally built to deliver truly remarkable sound</p>
+                            <Link to={'/AllProduct'} style={{ letterSpacing: '4px' }} className='text-[#fff] block text-center bg-[#000]  md:mt-0 mt-2 sm:w-full w-[50%] mx-auto  md:text-[16px] text-[11px] md:p-2 p-[7px]  animate-bounce'>CHECK IT OUT</Link>
                         </div>
                     </div>
                 </div>
@@ -94,3 +95,4 @@ function Home() {
 }
 
 export default Home
+// text-[#f57247]
