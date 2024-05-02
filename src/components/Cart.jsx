@@ -68,7 +68,8 @@ function Cart({ carts, setCart }) {
     }
 
     return (
-        <div className="bg-gray-100">
+
+        <div className="bg-gray-50">
             {notification && (<div className="bg-gray-300 p-4 md:w-[40%] w-[80%] rounded-md fixed transform -translate-x-1/2 -translate-y-1/2 md:top-[50%] top-[40%] left-[50%]">
                 <div className="flex items-center text-center justify-center flex-col">
                     <div><PiWarningCircleLight className="text-[#b72522]" size={40} /></div>
