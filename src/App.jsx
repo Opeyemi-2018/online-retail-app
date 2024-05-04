@@ -6,7 +6,6 @@ import ProductInfo from './components/ProductInfo'
 import { useState } from 'react'
 import Cart from './components/Cart'
 // import Pratice from './pratice'
-import Footer from './components/Footer'
 import AllProduct from './components/AllProduct'
 import SignUp from './components/SignUp'
 
@@ -34,7 +33,6 @@ function App() {
             {/* <Route path='Speaker/:id' element={<Speakerinfo setSpeakerQuantity={setSpeakerQuantity} speakerQuantity={speakerQuantity} carts={carts} setCart={setCart} showSignUp={showSignUp} showSuccessMsg={showSuccessMsg} setShowSuccessMsg={setShowSuccessMsg} />} /> */}
           </Route>
         </Routes>
-        <Footer />
       </BrowserRouter>
     </div>
   )

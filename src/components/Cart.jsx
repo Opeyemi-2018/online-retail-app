@@ -5,9 +5,9 @@ import { IoCart } from "react-icons/io5";
 import { useEffect, useState } from "react";
 import { FaPlus } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa6"
-
+import { FaEyeSlash } from "react-icons/fa";
+import { FaEye } from "react-icons/fa";
 import { PiWarningCircleLight } from "react-icons/pi"
-
 function Cart({ carts, setCart }) {
     let [deleteMsg, setDeleteMsg] = useState(false)
     let [notification, setNotification] = useState(false)
@@ -61,7 +61,10 @@ function Cart({ carts, setCart }) {
         setCart(updatedCart); // Update the cart state with the updated items
     };
 
-
+    const [showPassword, setShowPassword] = useState(false);
+    const handlePassword = () => {
+        setShowPassword(!showPassword); // Toggle the state variable
+    };
 
     let handlePayment = (e) => {
         e.preventDefault()
@@ -97,19 +100,19 @@ function Cart({ carts, setCart }) {
             </div>
 
             {carts.length === 0 ?
-                <div className="flex items-center  justify-center  p-2 h-screen">
+                <div className="flex items-center  justify-center  pt-2 h-screen">
                     <div>
                         <div className="bg-white rounded-full md:h-40 md:w-40 w-20 h-20  mx-auto flex items-center justify-center p-4 ">
                             <IoCart className='md:text-[80px] text-[50px]  text-[#000] animate-spin' />
                         </div>
                         <h1 className="text-[17px] text-center md:text-[22px]">Your cart is empty!</h1>
                         <p className="text-[17px] text-center md:text-[22px]">Browse our category and discover our best deals!</p>
-                        <Link to={'/Allproduct'}><button className='animate-bounce bg-orange-600 rounded-sm my-4 w-full md:p-1 text-[#fff] text-[18px] md:text-[20px]'>START SHOPPING</button> </Link>
+                        <Link to={'/Allproduct'}><button className='animate-bounce bg-orange-600 rounded-sm my-4 w-full md:p-1 text-[#fff] text-[17px] md:text-[19px]'>START SHOPPING</button> </Link>
 
                     </div>
                 </div>
                 :
-                <div className="md:mt-[110px] mt-[80px] py-5 rel ">
+                <div className="md:mt-[110px] mt-[118px] pt-5 rel ">
                     <div className='max-w-[1250px] md:px-5 px-2 mx-auto'>
                         <div className="flex md:flex-row flex-col flex-col-reverse gap-4 justify-between">
                             {pay && <div className="bg-white w-full  md:p-8  p-4">
@@ -161,26 +164,36 @@ function Cart({ carts, setCart }) {
                                         <h2 className="text-[#000] md:font-semibold font-medium">PAYMENT DETAILS</h2>
                                         <h3 className="py-1">payment method</h3>
                                         <div className="flex justify-between md:gap-4 gap-8 items-center">
-                                            <button className="border border-[#b72522] md:py-[2px] py-[1px] rounded-md  px-4 flex items-center justify-between  font-semibold text-gray-700 w-full whitespace-nowrap md:text-[18px] text-[14px]"> e-Money
+                                            <button className="border border-[#b72522] md:py-[2px] py-[1px] rounded-md  px-4 flex gap-4 items-center justify-between  font-semibold text-gray-700 w-full whitespace-nowrap md:text-[18px] text-[14px]"> e-Money
                                                 <input className="form-radio  h-5 w-5 accent-orange-700" name="radio-buttons" type="radio" />
                                             </button>
-                                            <button className="border  border-[#b72522] md:py-[2px] py-[1px] rounded-md  px-4 flex  items-center justify-between  font-semibold text-gray-700 w-full whitespace-nowrap md:text-[18px] text-[14px]"> cash on delivery
+                                            <button className="border  border-[#b72522] md:py-[2px] py-[1px] rounded-md  px-4 flex  gap-3 items-center justify-between  font-semibold text-gray-700 w-full whitespace-nowrap md:text-[18px] text-[14px]"> cash on delivery
                                                 <input className="form-radio h-5 w-5 accent-orange-700" name="radio-buttons" type="radio" />
                                             </button>
                                         </div>
 
-                                        <div className="md:flex md:flex-row flex-col gap-4 items-center mt-3">
+                                        <div className="md:flex md:flex-row flex-col justify-between gap-2 items-center mt-3">
                                             <div>
                                                 <label>e-money number</label>
-                                                <input className="border border-gray-400 w-full rounded-sm outline-none" type="number" />
+                                                <input type="number" className="border border-gray-400 pl-2 w-full rounded-sm outline-none" />
                                             </div>
                                             <div>
                                                 <label>e-money-pin</label>
-                                                <input className="border border-gray-400 w-full rounded-sm outline-nonse" type="text" />
+                                                <div className="relative">
+                                                    <input
+                                                        type={showPassword ? 'text' : 'password'} // Use conditional rendering based on the state variable
+                                                        className="border  border-gray-400 pl-2 w-full rounded-sm outline-none"
+                                                    />
+                                                    {showPassword ? (
+                                                        <FaEye onClick={handlePassword} className="absolute top-[20%] left-[85%]" />
+                                                    ) : (
+                                                        <FaEyeSlash onClick={handlePassword} className="absolute top-[20%] left-[85%]" />
+                                                    )}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <button style={{ letterSpacing: '4px' }} className="bg-orange-600 w-full md:p-2 mt-4 p-1 text-white font-semibold rounded-md">send</button>
+                                    <button style={{ letterSpacing: '4px' }} className="bg-orange-600 w-full md:p-2 mt-4 p-1 text-white text-2xl rounded-md">send</button>
                                 </form>
                             </div>}
 
@@ -227,10 +240,33 @@ function Cart({ carts, setCart }) {
                             </div>
                         </div>
                     </div>
-                </div>
 
+                </div>
             }
-            {/* </div> */}
+            <div className='bg-[#000] md:p-4 p-2  mt-[200px]'>
+                <div className='text-white max-w-[2000px] md:max-w-[1250px] md:px-0 px-2 mx-auto'>
+
+                    <h1 className="md:block flex items-center justify-center font-bold mb-2 md:text-[20px] text-[#adbdbc] text-[18px]">XX99</h1>
+                    <div className="flex md:flex-row flex-col-reverse flex-col  justify-between">
+                        <div className="basis-1/2 text-[#737e80] md:block flex items-center justify-center flex-col">
+                            <p className="py-4 text-[14px] md:text-[18px]">Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit. Harum eos officia impedit atque mollitia at
+                                accusamus architecto quos blanditiis est?
+                            </p>
+                            <p>copyright &copy; {new Date().getFullYear()}</p>
+                        </div>
+
+                        <div className="md:block flex items-center justify-center">
+                            <nav className="text-[14px] text-[#adbdbc] md:text-[16px] ">
+                                <Link to={'/.'} className='md:mx-7 mx-3' >HOME</Link>
+                                <Link to={'/AllProduct'} className='md:mx-7 mx-3'>PRODUCTS</Link>
+                                <Link className='md:mx-7 mx-3'>ABOUT</Link>
+                                <Link className='md:mx-7 mx-3'>CONTACT</Link>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

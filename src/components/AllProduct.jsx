@@ -41,7 +41,7 @@ function AllProduct() {
                     {products.filter((product) => {
                         return search.trim().toLowerCase() === '' ? product : product.name.toLowerCase().includes(search.trim())
                     }).map((product) => {
-                        let { id, image, name } = product
+                        let { id, image, name, price } = product
 
                         return (
                             <div>
@@ -52,7 +52,10 @@ function AllProduct() {
                                         </div>
 
                                         <div className='md:mt-7 mt-1 flex flex-col items-center'>
-                                            <h1 className='text-[#000300] whitespace-nowrap md:text-[17px] text-[13px] font-semibold md:font-bolder'>{name}</h1>
+                                            <div className='flex gap-4 items-center justify-between'>
+                                                <h1 className='text-[#000300] whitespace-nowrap md:text-[17px] text-[13px] font-semibold md:font-bolder'>{name}</h1>
+                                                <h1 className='md:text-[17px] text-[13px] font-semibold md:font-bolder text-gray-700' >${price}</h1>
+                                            </div>
                                             <div className='flex items-center justify-center gap-4 mt-1'>
                                                 <p className='text-gray-700 md:text-sm text-[10px]'>SHOP</p>
                                                 <IoIosArrowForward className='text-orange-600'></IoIosArrowForward >

@@ -9,19 +9,17 @@ import speaker4 from '../assets/images/speaker-4.png'
 function Home() {
     return (
         <div className=''>
-
             {/* <section className={showSignUp ? 'filter blur-[5px] brightness-[0.7]' : ''}> */}
             <div className='mt-[80px]'>
                 <div className='bg-[#000]   pt-5'>
-
                     <div className='text-white hidden md:px-0 px-2 sm:flex sm:flex-row  justify-between items-center max-w-[2000px]  md:max-w-[1250px] mx-auto'>
                         <div className=''>
                             <p className='md:text-1xl pb-3 space-x-10 text-[15px] tracking-widest text-[#adbdbc]'>NEW PRODUCT</p>
                             <h1 className='md:text-5xl pb-3 text-2xl  font-extrabold'>XX99 MARK II GADGET</h1>
                             <div className='md:flex items-center py-3 hidden '>
-                                <p>Shop with us today  </p>
+                                <p className='md:text-2xl text-1xl mr-2'>Shop with us today</p>
 
-                                <ReactTyped className='text-orange-600  ' strings={['For Exclusive Deal', 'and Enjoy Quality Product']} typeSpeed={100} backSpeed={20} loop />
+                                <ReactTyped className='text-orange-600  md:text-2xl text-[12px]' strings={['For Exclusive Deal', 'and Enjoy Quality Product']} typeSpeed={100} backSpeed={20} loop />
                             </div>
                             <p className='pb-3 text-[#adbdbc]'>Discover the perfect blend of style and comfort with our latest collection</p>
                             <div className=''>
@@ -89,6 +87,30 @@ function Home() {
                     </div>
                 </div>
             </section>
+            <div className='bg-[#000] md:p-4 p-2  mt-[100px]'>
+                <div className='text-white max-w-[2000px] md:max-w-[1250px] md:px-0 px-2 mx-auto'>
+
+                    <h1 className="md:block flex items-center justify-center font-bold mb-2 md:text-[20px] text-[#adbdbc] text-[18px]">XX99</h1>
+                    <div className="flex md:flex-row flex-col-reverse flex-col  justify-between">
+                        <div className="basis-1/2 text-[#737e80] md:block flex items-center justify-center flex-col">
+                            <p className="py-4 text-[14px] md:text-[18px]">Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit. Harum eos officia impedit atque mollitia at
+                                accusamus architecto quos blanditiis est?
+                            </p>
+                            <p>copyright &copy; {new Date().getFullYear()}</p>
+                        </div>
+
+                        <div className="md:block flex items-center justify-center">
+                            <nav className="text-[14px] text-[#adbdbc] md:text-[16px] ">
+                                <Link to={'/.'} className='md:mx-7 mx-3' >HOME</Link>
+                                <Link to={'/AllProduct'} className='md:mx-7 mx-3'>PRODUCTS</Link>
+                                <Link className='md:mx-7 mx-3'>ABOUT</Link>
+                                <Link className='md:mx-7 mx-3'>CONTACT</Link>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
             {/* </section> */}
         </div>
     )
